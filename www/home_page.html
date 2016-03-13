@@ -19,7 +19,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html ng-app="app">
+<html ng-app="GCProtoApp">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=yes" />
@@ -41,8 +41,14 @@
             </div>
         </div><!-- /container -->
 
-            <div class="notificacoes" ng-controller="notificacoesController">
-            	<h1>Teste</h1>
+            <div class="notificacoes" ng-controller="NotificationController as controller">
+                <div class="notificacao" ng-repeat="notification in controller.notifications | orderBy:'data'">
+                    <h1>Compromisso <img ng-src="{{controller.agendaThumb}}" width="25px"></h1>                    
+                	<p>
+                        Médico: {{notification.nome}}, {{notification.especialidade}}                    
+                        Data: {{notification.data}} às {{notification.horario}}
+                    </p>
+                </div>
             </div>    		 
 
 
@@ -93,8 +99,7 @@
         <script>
             $(document).ready(function(){
                 console.log("document loaded");
-            });
-            }
+            });            
         </script>
 
     </body>

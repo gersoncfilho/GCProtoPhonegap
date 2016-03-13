@@ -1,6 +1,5 @@
-app.controller('notificacoesController', function($scope)){
-	
-	$scope.notificacoes = [
+var testNotifications = 
+	[
 		{
 			'nome':'Dr. José da Silva',
 			'especialidade':'Cardiologista',
@@ -21,7 +20,10 @@ app.controller('notificacoesController', function($scope)){
 		}
 	];
 
-});
+app.controller('NotificationController', function(){	
+	this.notifications = testNotifications;
 
-	
-}
+	this.agendaThumb = "assets/agenda-thumb.png";
+
+	this.notificationThumb = "assets/notification-thumb.png";	
+});

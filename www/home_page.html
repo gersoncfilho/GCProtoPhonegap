@@ -25,10 +25,15 @@
         <meta name="format-detection" content="telephone=yes" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <!-- custom css -->
         <link rel="stylesheet" type="text/css" href="css/home.css" />
+        <link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
+
+        <!-- scripts -->
+        <script src="js/angular.min.js"></script>
+        <script src="js/app.module.js"></script>
     </head>
     <body>
         <div>
@@ -41,16 +46,24 @@
             </div>
         </div><!-- /container -->
 
-            <div class="notificacoes" ng-controller="NotificationController as controller">
-                <div class="notificacao" ng-repeat="notification in controller.notifications | orderBy:'data'">
-                    <h1>Compromisso <img ng-src="{{controller.agendaThumb}}" width="25px"></h1>                    
-                	<p>
-                        Médico: {{notification.nome}}, {{notification.especialidade}}                    
-                        Data: {{notification.data}} às {{notification.horario}}
-                    </p>
+        
+
+            
+            <div class="notifications panel panel-default" ng-controller="NotificationController as controller">
+                <div class="panel-heading">
+                    <input class="form-control" ng-model="search.nome" placeholder="Procura por nome..." />
+                </div>
+
+                <div class="panel-body">
+                    <div class="ui-list-view-striped" ui-list-view="notification in controller.notifications | filter:search">
+                        <div ng-class="{ selected: notification.selected }" ng-click="notification.selected = !notification.selected">
+                            <strong><h1 class="h1List" ng-bind="notification.nome"></h1></strong> - <h1 class="h1List" ng-bind="notification.especialidade"></h1><br>
+                            <p class="pList" ng-bind="notification.data"></p> - <p class="pList" ng-bind="notification.horario"></p>
+                        </div>
+                    </div>
                 </div>
             </div>    		 
-
+            
 
        		 <footer class="footer blue">
        		 		<div class="row space-top">
@@ -88,19 +101,14 @@
         <!-- bootstrap -->
         <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="js/bootstrap.js"></script>
+        <script src="js/ui-listView.js"></script>
 
-        <!-- scripts -->
-        <script src="js/angularjs.js"></script>
-        <script src="js/app.module.js"></script>
+        
 
         <!-- controllers -->
         <script src="js/homeController.js"></script> 
 
-        <script>
-            $(document).ready(function(){
-                console.log("document loaded");
-            });            
-        </script>
+        
 
     </body>
 </html>

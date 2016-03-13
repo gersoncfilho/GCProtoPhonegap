@@ -1,0 +1,48 @@
+body{
+	margin-top: 20px;
+}
+
+.notificacoes{
+	width: 90%;
+	height: 90%;
+	margin: 0 auto;
+	background-color: #000;
+	opacity: .4;
+}
+
+.notificacoes1{
+	position: fixed !important;
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+}
+
+.footer{
+	position: fixed;
+	bottom:0;
+	width: 100%;
+}
+
+.blue{
+	background-color: #004B8D;
+}
+
+.blue h1{
+	font-size: 3vw;
+	color: white;
+}
+
+.space-top{
+	margin-top: 5px;
+}
+
+.space-minor{
+	margin-top: -15px;
+}
+
+
+
+
+

@@ -74,15 +74,18 @@ var carteirinhas =
 [
 	{
 		'usuario':'Pedro Souza',
-		'tipo':'Titular'
+		'tipo':'Titular',
+		'carteiraUrl':'assets/carteira1.png'
 	},
 	{
 		'usuario':'Maria Silva Souza',
-		'tipo':'Dependente'
+		'tipo':'Dependente',
+		'carteiraUrl':'assets/carteira2.png'
 	},
 	{
 		'usuario':'Carlos Silva Souza',
-		'tipo':'Dependente'
+		'tipo':'Dependente',
+		'carteiraUrl':'assets/carteira1.png'
 	}
 
 ];
@@ -93,77 +96,66 @@ var testNotifications =
 			'nome':'Dr. José da Silva',
 			'especialidade':'Cardiologista',
 			'data':'18 de março de 2016',
-			'horario':'10:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'10:00 hs'
 		},
 		{
 			'nome':'Dr. Pedro Lima',
 			'especialidade':'Oftalmologista',
 			'data':'20 de março de 2016',
-			'horario':'12:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'12:00 hs'
 		},
 		{
 			'nome':'Dra. Sara Silva',
 			'especialidade':'Ortopedista',
 			'data':'21 de março de 2016',
-			'horario':'15:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'15:00 hs'
 		},
 		{
 			'nome':'Dr. Pedro Lima',
 			'especialidade':'Oftalmologista',
 			'data':'20 de março de 2016',
-			'horario':'12:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'12:00 hs'
 		},
 		{
 			'nome':'Dra. Sara Silva',
 			'especialidade':'Ortopedista',
 			'data':'21 de março de 2016',
-			'horario':'15:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'15:00 hs'
 		},
 		{
 			'nome':'Dr. Pedro Lima',
 			'especialidade':'Oftalmologista',
 			'data':'20 de março de 2016',
-			'horario':'12:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'12:00 hs'
 		},
 		{
 			'nome':'Dra. Sara Silva',
 			'especialidade':'Ortopedista',
 			'data':'21 de março de 2016',
-			'horario':'15:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'15:00 hs'
 		},
 		{
 			'nome':'Dr. Pedro Lima',
 			'especialidade':'Oftalmologista',
 			'data':'20 de março de 2016',
-			'horario':'12:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'12:00 hs'
 		},
 		{
 			'nome':'Dra. Sara Silva',
 			'especialidade':'Ortopedista',
 			'data':'21 de março de 2016',
-			'horario':'15:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'15:00 hs'
 		},
 		{
 			'nome':'Dr. Pedro Lima',
 			'especialidade':'Oftalmologista',
 			'data':'20 de março de 2016',
-			'horario':'12:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'12:00 hs'
 		},
 		{
 			'nome':'Dra. Sara Silva',
 			'especialidade':'Ortopedista',
 			'data':'21 de março de 2016',
-			'horario':'15:00 hs',
-			'carteiraUrl':'assets/carteira1.png'
+			'horario':'15:00 hs'
 		}
 	];

@@ -10,6 +10,23 @@
 	font-weight: medium;
 }
 
+@font-face{
+	font-family: 'RobotoLight';
+	src: url(fonts/roboto/roboto-light.ttf) format('truetype');
+	font-weight: medium;
+}
+
+@font-face{
+	font-family: 'RobotoRegular';
+	src: url(fonts/roboto/roboto-regular.ttf) format('truetype');
+	font-weight: medium;
+}
+
+h1{
+	margin: 0;
+
+}
+
 body{
 	margin-top: 20px;
 }
@@ -60,18 +77,19 @@ body{
 }
 
 .h1List{
-	font-family: helvetica, sans-serif;
+	font-family: RobotoMedium, sans-serif;
 	font-size: 1em;
 	display: inline-block;
-	line-height: 80%
-	font-weight: 400;
+	line-height: 80%;
+	margin: 0 0 0 20px;
 }
 
 .pList{
-	font-family: helvetica, sans-serif;
+	font-family: RobotoLight, sans-serif;
 	line-height: 80%;
 	display: inline-block;
 	margin-bottom: 0;
+	margin: 0 0 0 20px;
 }
 
 .panel-body .ui-list-view-bordered h1{
@@ -80,7 +98,18 @@ body{
 	font-weight: bold;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 
+.nui-list-view-striped{
+	background: red;
+}
+
+.thumb{
+	display: inline;
+	float: left;
+}
 
 
 

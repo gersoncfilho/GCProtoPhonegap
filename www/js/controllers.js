@@ -93,15 +93,18 @@ var carteirinhas =
 [
 	{
 		'usuario':'Pedro Souza',
-		'tipo':'Titular'
+		'tipo':'Titular',
+		'carteiraUrl':'assets/carteira1.png'
 	},
 	{
 		'usuario':'Maria Silva Souza',
-		'tipo':'Dependente'
+		'tipo':'Dependente',
+		'carteiraUrl':'assets/carteira2.png'
 	},
 	{
 		'usuario':'Carlos Silva Souza',
-		'tipo':'Dependente'
+		'tipo':'Dependente',
+		'carteiraUrl':'assets/carteira1.png'
 	}
 
 ];

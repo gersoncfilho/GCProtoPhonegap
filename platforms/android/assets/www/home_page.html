@@ -27,15 +27,19 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/ui-bootstrap-csp.css">
         <!-- custom css -->
         <link rel="stylesheet" type="text/css" href="css/home.css" />
         <link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
 
+
         <!-- scripts -->
         <script src="js/angular.min.js"></script>
+        <script src="js/angular-animate.min.js"></script>
         <script src="js/app.module.js"></script>
+        
     </head>
-    <body>
+    <body class="ng-cloak">
         <div>
             <div class="text-center">
                 <img src="assets/logo_golden_azul_250px.png" />
@@ -46,28 +50,53 @@
             </div>
         </div><!-- /container -->       
 
-        <!-- Inicio -->            
-        <div class="notifications panel panel-default" ng-controller="HomeController as home" >
-            <div class="panel-heading" ng-show="navigation.isPage('Início')">
+        <!-- Notificações -->            
+        <div class="notifications panel panel-default" ng-controller="HomeController as home" ng-show="navigation.isPage('Notificações')">
+            <!-- Lista de Notificações -->
+            <div class="panel-heading" ng-show="navigation.isSection('Início')">
                 <input class="form-control" ng-model="search.nome" placeholder="Procura por nome..." />
             </div>
 
-            <div class="panel-body" ng-show="navigation.isPage('Início')">
-                <div class="ui-list-view-striped" ui-list-view="notification in home.notifications | filter:search">
-                    <div ng-class="{ selected: notification.selected }" ng-click="notification.selected = !notification.selected">
-                        <img ng-src="assets/agenda-thumb-cinza.png" width="20px" ng-click="home.showNotification(notification, navigation)" />
-                        <strong><h1 class="h1List" ng-bind="notification.nome"></h1></strong> - <h1 class="h1List" ng-bind="notification.especialidade"></h1><br>
-                        <p class="pList" ng-bind="notification.data"></p> - <p class="pList" ng-bind="notification.horario"></p>
+            <div class="panel-body ng-cloak" ng-show="navigation.isSection('Início')">
+                <div class="ui-list-view-striped" ui-list-view="notification in home.notifications | filter:search" options="listView">
+                    <div ng-class="{ _selected : home.isSelectedNotification(notification) }" ng-click="home.setSelectedNotification(notification)">
+                        
+                             <img class="thumb" ng-src="assets/agenda-thumb-cinza.png" width="20px" ng-click="home.showNotification(notification, navigation)" />   
+                        
+                            <strong><h1 class="h1List" ng-bind="notification.nome"></h1></strong><h1 class="h1List">-</h1><h1 class="h1List" ng-bind="notification.especialidade"></h1><br>
+                        <p class="pList" ng-bind="notification.data"></p> <p class="pList">às</p><p class="pList" ng-bind="notification.horario"></p>
+                                  
                     </div>
                 </div>
             </div>
 
             <!-- Notificação -->
-            <div ng-show="navigation.isPage('Notificação')">
+            <div ng-show="navigation.isSection('Notificação')">
                 <strong><h1 class="h1List" ng-bind="home.selectedNotification.nome"></h1></strong> - <h1 class="h1List" ng-bind="home.selectedNotification.especialidade"></h1><br>
                 <p class="pList" ng-bind="home.selectedNotification.data"></p> - <p class="pList" ng-bind="home.selectedNotification.horario"></p>
             </div>
-        </div>		         
+        </div>
+
+        <!-- Carteirinhas -->
+        <div class="notifications panel panel-default" ng-controller = "CarteirasController as carteiras" ng-show="navigation.isPage('Carteirinha')" >
+            <!-- Lista de Carteirinhas -->           
+            <div ng-show="navigation.isSection('Início')" class="panel-body" >               
+                <div class="ui-list-view-striped" ui-list-view="carteira in carteiras.carteirinhas">
+                    <div ng-class="{ _selected: carteiras.isSelectedCarteira(carteira) }" ng-click="carteiras.setSelectedCarteira(carteira, navigation)">
+                        <strong><h1 class="h1List" ng-bind="carteira.usuario"></h1></strong><br>
+                        <p class="pList" ng-bind="carteira.tipo"></p>
+                    </div>
+                </div>         
+            </div>
+
+            <!-- Carteira -->
+            <div ng-show="navigation.isSection('Carteira')">
+                <div class="text-center">
+                    <h2 ng-bind="carteiras.selectedCarteira.usuario"></h2>
+                    <h3 ng-bind="carteiras.selectedCarteira.tipo"></h3>
+                </div>
+            </div>
+        </div>	         
             
         <!-- Footer -->
 	    <footer class="footer blue">
@@ -77,7 +106,7 @@
             	</div>
 
             	<div class="col-xs-2 text-center">
-            		<a href ng-click="navigation.goToPage('Início')" >
+            		<a href ng-click="navigation.goToPage('Notificações')" >
                         <img width="40px" ng-src="assets/inicio.png" />
                     </a>
             	</div>

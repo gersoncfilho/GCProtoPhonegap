@@ -1,5 +1,5 @@
-angular.module("GCProtoApp", ["ui-listView"])
-.controller("homeController1", function ($scope) {
+angular.module("app", ["ui-listView"])
+.controller("SampleApp", function ($scope) {
     
     $scope.listViewOptions = {};
     
@@ -37,7 +37,7 @@ angular.module("GCProtoApp", ["ui-listView"])
             'horario':'10:00 hs'
         },
         {
-            'nome':'Dr. José da Silva',
+            'nome':'Dr. Paulo da Silva',
             'especialidade':'Cardiologista',
             'data':'18 de março de 2016',
             'horario':'10:00 hs'

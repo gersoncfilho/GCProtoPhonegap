@@ -1,1 +1,1 @@
-var app = angular.module("app",[]);
+var app = angular.module("GCProtoApp",["ui-listView"]);

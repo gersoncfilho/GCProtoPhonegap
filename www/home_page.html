@@ -29,9 +29,10 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="css/ui-bootstrap-csp.css">
         <!-- custom css -->
+        <link rel="stylesheet" type="text/css" href="css/ui-googleMaps.css" />
         <link rel="stylesheet" type="text/css" href="css/home.css" />
         <link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
-        <link rel="stylesheet" type="text/css" href="css/ui-googleMaps.css" />
+        
 
 
         <!-- scripts -->
@@ -41,18 +42,21 @@
         
     </head>
     <body class="ng-cloak">
-        <div>
+        <div class="header">
             <div class="text-center">
                 <img src="assets/logo_golden_azul_250px.png" />
             </div>
 
-            <div class="text-center">
-            	<h1 ng-bind="navigation.page"></h1>
-            </div>
-        </div><!-- /container -->       
+            
+        </div> <!--header-->       
 
         <!-- Notificações -->            
-        <div class="notifications panel panel-default" ng-controller="HomeController as home" ng-show="navigation.isPage('Notificações')">
+        <div class="panel panel-default" ng-controller="HomeController as home" ng-show="navigation.isPage('Notificações')">
+            <div class="text-center space-top space-bottom">
+                <!-- <h1 ng-bind="navigation.page"></h1> -->
+                <h3>Olá Tiago, seja bem-vindo.</h1>
+            </div>
+
             <!-- Lista de Notificações -->
             <div class="panel-heading" ng-show="navigation.isSection('Início')">
                 <input class="form-control" ng-model="search.nome" placeholder="Procura por nome..." />
@@ -60,13 +64,12 @@
 
             <div class="panel-body ng-cloak" ng-show="navigation.isSection('Início')">
                 <div class="ui-list-view-striped" ui-list-view="notification in home.notifications | filter:search" options="listView">
-                    <div ng-class="{ _selected : home.isSelectedNotification(notification) }" ng-click="home.setSelectedNotification(notification)">
+                    <div ng-class="{ _selected : home.isSelectedNotification(notification) }" ng-click="home.showNotification(notification, navigation)">
                         
                              <img class="thumb" ng-src="assets/agenda-thumb-cinza.png" width="20px" ng-click="home.showNotification(notification, navigation)" />   
                         
                             <strong><h1 class="h1List" ng-bind="notification.nome"></h1></strong><h1 class="h1List">-</h1><h1 class="h1List" ng-bind="notification.especialidade"></h1><br>
-                        <p class="pList" ng-bind="notification.data"></p> <p class="pList">às</p><p class="pList" ng-bind="notification.horario"></p>
-                                  
+                        <p class="pList" ng-bind="notification.data"></p> <p class="pList">às</p><p class="pList" ng-bind="notification.horario"></p>                                
                     </div>
                 </div>
             </div>
@@ -82,8 +85,19 @@
                     </ui-gmap-marker>
                 </ui-gmap-google-map>                
 
-                <strong><h1 class="h1List" ng-bind="home.selectedNotification.nome"></h1></strong> - <h1 class="h1List" ng-bind="home.selectedNotification.especialidade"></h1><br>
-                <p class="pList" ng-bind="home.selectedNotification.data"></p> - <p class="pList" ng-bind="home.selectedNotification.horario"></p>                
+                <div>
+                    <h1 ng-bind="home.selectedNotification.nome"></h1>
+                    <h2 ng-bind="home.selectedNotification.especialidade"></h2>
+                    <h3 ng-bind="home.selectedNotification.endereco1"></h2>
+                    <h3 ng-bind="home.selectedNotification.endereco2"></h3>
+                    <h3 ng-bind="home.selectedNotification.endereco3"></h3>
+                    <h3 ng-bind="home.selectedNotification.tel"></h3>
+                    <h3 ng-bind="home.selectedNotification.email"></h3>
+                </div>
+
+
+                <!-- <strong><h1 class="h1List" ng-bind="home.selectedNotification.nome"></h1></strong> - <h1 class="h1List" ng-bind="home.selectedNotification.especialidade"></h1><br>
+                <p class="pList" ng-bind="home.selectedNotification.data"></p> - <p class="pList" ng-bind="home.selectedNotification.horario"></p> -->                
             </div>
         </div>
 
@@ -111,7 +125,7 @@
         </div>	         
             
         <!-- Footer -->
-	    <footer class="footer blue">
+	    <footer class="footer blue" style="margin-top:10px;">
 	 		<div class="row space-top">
             	<div class="col-xs-1">
 
@@ -163,8 +177,8 @@
         <script src="js/controllers.js"></script>
 
         <!-- Google Maps -->
-        <script src='../node_modules/angular-google-maps/node_modules/lodash/lodash.min.js'></script>
-        <script src='../node_modules/angular-google-maps/node_modules/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
+        <script src='js/lodash/lodash.min.js'></script>
+        <script src='js/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
         <script src='js/angular-google-maps.min.js'></script>
 
     </body>

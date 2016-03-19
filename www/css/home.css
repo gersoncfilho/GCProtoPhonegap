@@ -23,12 +23,73 @@
 }
 
 h1{
+	font-family: RobotoBold, sans-serif;
 	margin: 0;
+	font-size: 2.5rem;
+	font-weight: normal;
+	line-height: 1.5;
 
+}
+
+h2{
+	font-family: RobotoRegular, sans-serif;
+	margin: 0;
+	font-size: 2rem;
+	font-weight: normal;
+	line-height: 1.5;
+}
+
+h3{
+	font-family: RobotoLight, sans-serif;
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: normal;
+	line-height: 1.5;
+}
+
+h4{
+	font-family: RobotoLight, sans-serif;
+	margin: 0;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1.5;
+}
+
+h5{
+	font-family: RobotoLight, sans-serif;
+	margin: 0;
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+h6{
+	font-family: RobotoLight, sans-serif;
+	margin: 0;
+	font-size: 0,5rem;
+	font-weight: normal;
 }
 
 body{
 	margin-top: 20px;
+}
+
+.header{
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 999;
+	width: 100%;
+	height: 70px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom:10px;
+	border-bottom: 1px solid #eee;
+	box-shadow: 0px 1px 3px #ababab;
+}
+
+.panel-default{
+	margin-top: 80px;
+	border: 0px;
 }
 
 .notificacoes{
@@ -64,7 +125,10 @@ body{
 }
 
 .space-top{
-	margin-top: 5px;
+	margin-top: 10px;
+}
+.space-bottom{
+	margin-bottom: 10px;
 }
 
 .space-minor{
@@ -80,13 +144,11 @@ body{
 	font-family: RobotoMedium, sans-serif;
 	font-size: 1em;
 	display: inline-block;
-	line-height: 80%;
 	margin: 0 0 0 20px;
 }
 
 .pList{
 	font-family: RobotoLight, sans-serif;
-	line-height: 80%;
 	display: inline-block;
 	margin-bottom: 0;
 	margin: 0 0 0 20px;
@@ -110,6 +172,13 @@ body{
 	display: inline;
 	float: left;
 }
+
+.angular-google-map-container{ 
+	height: 300px; 
+}
+
+
+
 
 
 

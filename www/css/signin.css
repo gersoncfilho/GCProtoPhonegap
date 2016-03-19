@@ -86,4 +86,18 @@ margin-bottom: 40px;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}\
+
+.center{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#left{
+  float: left;
+}
+
+#right{
+  float: right;
 }

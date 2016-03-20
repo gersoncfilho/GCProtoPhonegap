@@ -103,6 +103,10 @@
 
         <!-- Carteirinhas -->
         <div class="notifications panel panel-default" ng-controller = "CarteirasController as carteiras" ng-show="navigation.isPage('Carteirinha')" >
+        <div class="text-center" style="margin-bottom: 20px;">
+                <h1 ng-bind="navigation.page"></h1>
+                <!-- <h3>Olá Tiago, seja bem-vindo.</h1> -->
+            </div>
             <!-- Lista de Carteirinhas -->           
             <div ng-show="navigation.isSection('Início')" class="panel-body" >               
                 <div class="ui-list-view-striped" ui-list-view="carteira in carteiras.carteirinhas">
@@ -192,7 +196,10 @@
         <script src="js/ui-listView.js"></script>        
 
         <!-- controllers -->
-        <script src="js/controllers.js"></script>
+        <script src="js/HomeController.js"></script>
+        <script src="js/FavoritosController.js"></script>
+        <script src="js/CarteirasController.js"></script>
+        <script src="js/NavigationController.js"></script>
 
         <!-- Google Maps -->
         <script src='js/lodash/lodash.min.js'></script>

@@ -1,0 +1,22 @@
+<!-- Favoritos -->            
+<div class="panel panel-default" ng-controller="FavoritosController">
+    <div class="text-center" style="margin-bottom: 20px;">
+        <h1 ng-bind="titulo"></h1>
+        <!-- <h3>Olá Tiago, seja bem-vindo.</h1> -->
+    </div>
+
+    <!-- Lista de Favoritos -->
+    <div class="panel-body ng-cloak">
+        <div class="ui-list-view-striped" ui-list-view="favorito in favoritos">
+            <div>                
+                <strong><h1 ng-bind="favorito.nome"></h1></strong>
+                <h2 ng-bind="favorito.especialidade"></h1>
+                <h2 ng-bind="favorito.endereco1"></h2>
+                <h2 ng-bind="favorito.endereco2"></h2> 
+                <h2 ng-bind="favorito.endereco3"></h2> 
+                <h2 ng-bind="favorito.telefone"></h2> 
+                <a><h2 ng-bind="favorito.email"></h2></a>                   
+            </div>
+        </div>
+    </div>
+<!-- Favoritos -->

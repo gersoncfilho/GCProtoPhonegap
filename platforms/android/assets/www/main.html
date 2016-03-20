@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html ng-app="App">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/ui-bootstrap-csp.css">
+        <!-- custom css -->
+        <link rel="stylesheet" type="text/css" href="css/ui-googleMaps.css" />
+        <link rel="stylesheet" type="text/css" href="css/home.css" />
+        <link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
+        <!-- scripts -->
+        <script src="js/angular-1.5.0/angular.min.js"></script>
+        <script src="js/angular-1.5.0/angular-route.js"></script>
+        <script src="js/angular-1.5.0/angular-animate.min.js"></script>
+        <script src="js/main.module.js"></script>
+        
+    </head>
+    <body class="ng-cloak" style="height: 100%; width: 100%">
+        <div>
+            <div class="text-center">
+                <img src="assets/logo_golden_azul_250px.png" />
+            </div>        
+        </div> <!--header-->
+
+        <div>
+        	<div ng-view></div>
+        </div>
+
+        <!-- Footer -->
+	    <footer class="footer blue" style="margin-top:10px;">
+	 		<div class="row space-top">
+            	<div class="col-xs-1">
+
+            	</div>
+
+            	<div class="col-xs-2 text-center">
+            		<a href="#Notificacoes">
+                        <img width="40px" ng-src="assets/inicio.png" />
+                    </a>
+            	</div>
+
+            	<div class="col-xs-2 text-center">
+                    <a href="#Carteiras" >
+            		    <img width="40px" ng-src="assets/carteirinha.png" />
+                    </a>
+            	</div>
+
+            	<div class="col-xs-2 text-center">
+                    <a href="#Favoritos">
+            		    <img width="40px" ng-src="assets/favoritos.png" />
+                    </a>
+            	</div>
+
+            	<div class="col-xs-2 text-center">
+                    <a href ng-click="navigation.goToPage('Agenda')" >
+            		    <img width="40px" ng-src="assets/agenda.png" />
+                    </a>
+            	</div>
+
+            	<div class="col-xs-2 text-center">
+                    <a href ng-click="navigation.goToPage('Serviços')" >
+            		    <img width="40px" ng-src="assets/servicos.png" />
+                    </a>
+            	</div>
+
+            	<div class="col-xs-1">
+
+            	</div>
+            </div> 			
+		</footer>
+
+		<!-- bootstrap -->
+        <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/ui-listView.js"></script>        
+
+        <!-- Google Maps -->
+        <script src='js/lodash/lodash.min.js'></script>
+        <script src='js/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
+        <script src='js/angular-google-maps.min.js'></script>
+
+    </body>
+</html>

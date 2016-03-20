@@ -41,8 +41,8 @@
         <script src="js/app.module.js"></script>
         
     </head>
-    <body class="ng-cloak">
-        <div class="header">
+    <body class="ng-cloak" style="height: 100%; width: 100%">
+        <div>
             <div class="text-center">
                 <img src="assets/logo_golden_azul_250px.png" />
             </div>
@@ -52,9 +52,9 @@
 
         <!-- Notificações -->            
         <div class="panel panel-default" ng-controller="HomeController as home" ng-show="navigation.isPage('Notificações')">
-            <div class="text-center space-top space-bottom">
-                <!-- <h1 ng-bind="navigation.page"></h1> -->
-                <h3>Olá Tiago, seja bem-vindo.</h1>
+            <div class="text-center" style="margin-bottom: 20px;">
+                <h1 ng-bind="navigation.page"></h1>
+                <!-- <h3>Olá Tiago, seja bem-vindo.</h1> -->
             </div>
 
             <!-- Lista de Notificações -->
@@ -103,6 +103,10 @@
 
         <!-- Carteirinhas -->
         <div class="notifications panel panel-default" ng-controller = "CarteirasController as carteiras" ng-show="navigation.isPage('Carteirinha')" >
+        <div class="text-center" style="margin-bottom: 20px;">
+                <h1 ng-bind="navigation.page"></h1>
+                <!-- <h3>Olá Tiago, seja bem-vindo.</h1> -->
+            </div>
             <!-- Lista de Carteirinhas -->           
             <div ng-show="navigation.isSection('Início')" class="panel-body" >               
                 <div class="ui-list-view-striped" ui-list-view="carteira in carteiras.carteirinhas">
@@ -122,6 +126,25 @@
                     
                 </div>
             </div>
+
+             <!-- Lista de Favoritos -->
+           <!--  <div div class="panel panel-default" ng-controller="FavoritosController as favoritos" ng-show="navigation.isPage('Notificações')"> 
+                <div class="panel-heading" ng-show="navigation.isSection('Favoritos')">
+                    <input class="form-control" ng-model="search.nome" placeholder="Procura por nome..." />
+                </div>
+
+                <div class="panel-body ng-cloak" ng-show="navigation.isSection('Favoritos')">
+                    <div class="ui-list-view-striped" ui-list-view="favorito in favoritos.favoritos | filter:search" options="listView">
+                        <div ng-class="{ _selected : favoritos.isSelectedfavorito(favorito) }" ng-click="favoritos.showFavorito(favorito, navigation)">
+                            
+                                 <img class="thumb" ng-src="assets/agenda-thumb-cinza.png" width="20px" ng-click="favoritos.showNFavorito(nfavorito, navigation)" />   
+                            
+                                <strong><h1 class="h1List" ng-bind="favorito.nome"></h1></strong><h1 class="h1List">-</h1><h1 class="h1List" ng-bind="favorito.especialidade"></h1><br>
+                                                         
+                        </div>
+                    </div>
+                </div>
+            </div> -->
         </div>	         
             
         <!-- Footer -->
@@ -164,8 +187,7 @@
             	<div class="col-xs-1">
 
             	</div>
-            </div> 
-			
+            </div> 			
 		</footer>	
 
         <!-- bootstrap -->
@@ -174,7 +196,10 @@
         <script src="js/ui-listView.js"></script>        
 
         <!-- controllers -->
-        <script src="js/controllers.js"></script>
+        <script src="js/HomeController.js"></script>
+        <script src="js/FavoritosController.js"></script>
+        <script src="js/CarteirasController.js"></script>
+        <script src="js/NavigationController.js"></script>
 
         <!-- Google Maps -->
         <script src='js/lodash/lodash.min.js'></script>

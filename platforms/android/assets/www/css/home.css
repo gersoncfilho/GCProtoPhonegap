@@ -85,10 +85,12 @@ body{
 	margin-bottom:10px;
 	border-bottom: 1px solid #eee;
 	box-shadow: 0px 1px 3px #ababab;
+	overflow: hidden;
 }
 
 .panel-default{
-	margin-top: 600px;
+	margin-top: 20px;
+	border: 0px;
 }
 
 .notificacoes{
@@ -124,7 +126,10 @@ body{
 }
 
 .space-top{
-	margin-top: 5px;
+	margin-top: 10px;
+}
+.space-bottom{
+	margin-bottom: 10px;
 }
 
 .space-minor{

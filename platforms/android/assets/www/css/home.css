@@ -25,7 +25,7 @@
 h1{
 	font-family: RobotoBold, sans-serif;
 	margin: 0;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	font-weight: normal;
 	line-height: 1.5;
 
@@ -34,7 +34,7 @@ h1{
 h2{
 	font-family: RobotoRegular, sans-serif;
 	margin: 0;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-weight: normal;
 	line-height: 1.5;
 }
@@ -42,7 +42,7 @@ h2{
 h3{
 	font-family: RobotoLight, sans-serif;
 	margin: 0;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	font-weight: normal;
 	line-height: 1.5;
 }
@@ -50,7 +50,7 @@ h3{
 h4{
 	font-family: RobotoLight, sans-serif;
 	margin: 0;
-	font-size: 1rem;
+	font-size: 0.5rem;
 	font-weight: normal;
 	line-height: 1.5;
 }

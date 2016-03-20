@@ -1,0 +1,59 @@
+<!-- Agendamento -->            
+<div ng-controller="AgendaController">
+    <div style="margin-top: 20px;" class="text-center" style="margin-bottom: 20px;">
+        <h1 ng-bind="titulo"></h1>
+        <!-- <h3>Olá Tiago, seja bem-vindo.</h1> -->
+    </div>
+
+    <div class="container" style="margin-top:15px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading ng-cloak">
+                <div class="">
+                    <h1 class="text-center">Busca de Rede</h1>
+                </div>
+            </div>
+            <div class="panel panel-body">
+                <button class="btn btn-primary btn-block btn-lg" type="submit">Busca Próximo a mim</button> 
+                <hr>
+                <div style="margin-top: 15px;">
+                    <label for="selectEstado" class="control-label">Estado</label>
+                    <select class="form-control" id="selectEstado">
+                        <option>Selecione Estado</option>
+                        <option>RJ</option>
+                        <option>SP</option>
+                        <option>BA</option>
+                        <option>RN</option>
+                        <option>BH</option>
+                        <option>CE</option>
+                    </select>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="selectMunicipio" class="control-label">Município</label>
+                    <select class="form-control" id="selectMunicipio">
+                    <option>Selecione Município</option>
+                        <option>Rio de Janeiro</option>
+                        <option>Duque de Caxias</option>
+                        <option>São Gonçalo</option>
+                        <option>Niterói</option>
+                        <option>Angra dos Reis</option>
+                        <option>Parati</option>
+                    </select>
+                </div>
+                <div style="margin-top: 15px;">
+                    <label for="selectBairro" class="control-label">Bairro</label>
+                    <select class="form-control" id="selectBairro">
+                    <option>Selecione Bairro</option>
+                        <option>Barra da Tijuca</option>
+                        <option>Méier</option>
+                        <option>Recreio dos Bandeirantes</option>
+                        <option>Tijuca</option>
+                        <option>Centro</option>
+                        <option>São Cristovão</option>
+                    </select>
+                </div>
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-primary btn-block btn-lg" type="submit">Buscar</button> 
+                </div>
+            </div>
+        </div>
+<!-- Agendamento -->

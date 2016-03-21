@@ -20,34 +20,38 @@ App.config(['$routeProvider',
         templateUrl: 'templates/agenda.html',
         controller: 'AgendaController'
       }).
+      when('/Notificacoes/:name', {
+        templateUrl: 'templates/detalhe.html',
+        controller: 'DetalheController'
+      }).
       otherwise({
         redirectTo: '/Notificacoes'
       })
-}],
+}]);
+
+App.config(function(uiGmapGoogleMapApiProvider) {
 [
-  function(iGmapGoogleMapApiProvider){
+  function(uiGmapGoogleMapApiProvider){
     uiGmapGoogleMapApiProvider.configure({        
         key: 'AIzaSyAimn8YL1R383fSyjL-zpTShSt1_cqqfu8', //    key: 'your api key',
         v: '3.23', //defaults to latest 3.X anyhow
         libraries: 'weather,geometry,visualization'
     });
   }
-]);
+]});
 
+//App.controller('DetalheController', ['$routeParams', function($scope, $routeParams, uiGmapGoogleMapApi){
+//    $scope.notification = $routeParams.notification;    
+//}]);
 
-App.controller('NotificacoesController', function($scope, uiGmapGoogleMapApi){ 
+App.controller('DetalheController', ['$scope', '$routeParams',
+  function($scope, $routeParams) {
+    $scope.name = $routeParams.name;
+  }]);
+
+App.controller('NotificacoesController', function($scope){ 
 
   $scope.titulo = "Notificações";
-
-  $scope.setSelectedNotification = function(notification)
-    {
-      this.selectedNotification = notification;
-    };
-
-    this.isSelectedNotification = function(notification)
-    {
-     return this.selectedNotification === notification;
-    };
 
   $scope.notificacoes = [
     {

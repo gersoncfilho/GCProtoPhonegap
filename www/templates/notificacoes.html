@@ -12,11 +12,13 @@
 
     <div class="panel-body ng-cloak">
         <div class="ui-list-view-striped" ui-list-view="notificacao in notificacoes | filter:search" options="listView">
-            <div>                
-                    <img class="thumb" ng-src="assets/agenda-thumb-cinza.png" width="20px"/>
-                    <strong><h1 class="h1List" ng-bind="notificacao.nome"></h1></strong><h1 class="h1List">-</h1><h1 class="h1List" ng-bind="notificacao.especialidade"></h1><br>
-                <p class="pList" ng-bind="notificacao.data"></p> <p class="pList">às</p><p class="pList" ng-bind="notificacao.horario"></p>                                
-            </div>
+            <a ng-href="#/Notificacoes/{{notificacao.nome}}">
+                <div>                
+                        <img class="thumb" ng-src="assets/agenda-thumb-cinza.png" width="20px"/>
+                        <strong><h1 class="h1List" ng-bind="notificacao.nome"></h1></strong><h1 class="h1List">-</h1><h1 class="h1List" ng-bind="notificacao.especialidade"></h1><br>
+                    <p class="pList" ng-bind="notificacao.data"></p> <p class="pList">às</p><p class="pList" ng-bind="notificacao.horario"></p>                                
+                </div>
+            </a>
         </div>
     </div>
 <!-- Notificação -->

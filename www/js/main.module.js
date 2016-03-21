@@ -1,6 +1,18 @@
 //Define an angular module for our app
 var App = angular.module('App', ['ngRoute','ui-listView', 'uiGmapgoogle-maps']); 
  
+App.factory('notificacaoFactory', function(){
+  var notificacaoFactory = {};
+
+  notificacaoFactory.notificacao = [];
+
+  notificacaoFactory.set = function(value){
+    notificacaoFactory.notificacao = value;
+  };
+
+  return notificacaoFactory;
+});
+
 App.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -20,7 +32,7 @@ App.config(['$routeProvider',
         templateUrl: 'templates/agenda.html',
         controller: 'AgendaController'
       }).
-      when('/Notificacoes/:name', {
+      when('/Notificacao/Detalhe', {
         templateUrl: 'templates/detalhe.html',
         controller: 'DetalheController'
       }).
@@ -74,13 +86,17 @@ App.config(function(uiGmapGoogleMapApiProvider) {
 
 
 
-App.controller('NotificacoesController', function($scope, $window, notificacaoService){ 
+App.controller('NotificacoesController', function($scope, $location, notificacaoFactory){ 
 
   $scope.titulo = "Notificações";
 
-  notificacaoService.setNome = $scope.notificacoes.nome;
+  $scope.addNotificacao = function(notificacao){
+    notificacaoFactory.set(notificacao);
+    
+    console.log(notificacaoFactory.notificacao);
 
-  notificacaoService.setEspecialidade = $scope.notificacoes.especialidade;
+    $location.path("/Notificacao/Detalhe");
+  }
 
   $scope.notificacoes = [
     {
@@ -186,14 +202,31 @@ App.controller('NotificacoesController', function($scope, $window, notificacaoSe
 });
  
  
-App.controller('DetalheController', ['$scope', '$routeParams', function($scope, notificacaoService){
+App.controller('DetalheController', function($scope, notificacaoFactory, uiGmapGoogleMapApi){
 
-  this.showNotificacao = function(notificacaoService){
-    this.nome = notificacaoService.getNome:
-  };
-  }
+  $scope.titulo = "Detalhe";
 
-}]);
+  $scope.notificacao = notificacaoFactory.notificacao;
+
+  $scope.map = [];
+  
+  $scope.marker = [];
+
+   uiGmapGoogleMapApi.then(function(maps) {
+      $scope.map = {center: {latitude: $scope.notificacao.latitude, longitude: $scope.notificacao.longitude }, zoom: 14};
+
+   $scope.marker = {
+       id: 0,
+       coords: {
+           latitude: $scope.notificacao.latitude,
+           longitude: $scope.notificacao.longitude
+          },
+          options: {
+           title: $scope.notificacao.nome
+          }
+       };
+    });
+});
 
 App.controller('CarteirasController', function($scope) {
  

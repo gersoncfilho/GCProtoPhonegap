@@ -1,5 +1,5 @@
 <!-- Notificações -->            
-<div class="panel panel-default" ng-controller="NotificacoesController">
+<div class="panel panel-default" ng-controller="NotificacoesController as notCtrl">
     <div class="text-center" style="margin-bottom: 20px;">
         <h1 ng-bind="titulo"></h1>
         <!-- <h3>Olá Tiago, seja bem-vindo.</h1> -->
@@ -12,13 +12,13 @@
 
     <div class="panel-body ng-cloak">
         <div class="ui-list-view-striped" ui-list-view="notificacao in notificacoes | filter:search" options="listView">
-            <a ng-href="#/Notificacoes/{{notificacao.nome}}">
-                <div>                
+           <!--  <a ng-href="#/Notificacoes/detalhe"> -->
+                <div ng-click="addNotificacao(notificacao)">                
                         <img class="thumb" ng-src="assets/agenda-thumb-cinza.png" width="20px"/>
                         <strong><h1 class="h1List" ng-bind="notificacao.nome"></h1></strong><h1 class="h1List">-</h1><h1 class="h1List" ng-bind="notificacao.especialidade"></h1><br>
                     <p class="pList" ng-bind="notificacao.data"></p> <p class="pList">às</p><p class="pList" ng-bind="notificacao.horario"></p>                                
                 </div>
-            </a>
+            <!-- </a> -->
         </div>
     </div>
 <!-- Notificação -->

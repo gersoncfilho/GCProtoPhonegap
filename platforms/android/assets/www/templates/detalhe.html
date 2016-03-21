@@ -2,7 +2,7 @@
 <div class="panel panel-default" ng-controller="DetalheController">
     
     <div class="panel-body ng-cloak">
-        <!-- Google Maps
+        <!-- Google Maps -->
         <ui-gmap-google-map center='map.center' zoom='map.zoom'>
             <ui-gmap-marker
                 idKey='marker.id'
@@ -10,24 +10,23 @@
                 options='marker.options'>
             </ui-gmap-marker>
         </ui-gmap-google-map>
-        -->              
+                     
 
-        <!--
+        
         <div>
-            <h1 ng-bind="notification.nome"></h1>
-            <h2 ng-bind="notification.especialidade"></h2>
-            <h3 ng-bind="notification.endereco1"></h3>
-            <h3 ng-bind="notification.endereco2"></h3>
-            <h3 ng-bind="notification.endereco3"></h3>
-            <h3 ng-bind="notification.tel"></h3>
-            <h3 ng-bind="notification.email"></h3>
-        </div>
-        -->
+        <!--<p>notificacao = {{notificacao}}</p>-->
 
-        <div>
-            <h1 ng-bind="name"></h1>
+            <h1 ng-bind="notificacao.nome"></h1>
+            <h2 ng-bind="notificacao.especialidade"></h2>
+            <h3 ng-bind="notificacao.endereco1"></h3>
+            <h3 ng-bind="notificacao.endereco2"></h3>
+            <h3 ng-bind="notificacao.endereco3"></h3>
+            <h3 ng-bind="notificacao.tel"></h3>
+            <h3 ng-bind="notificacao.email"></h3>
         </div>
+        
 
+       
         <!-- <strong><h1 class="h1List" ng-bind="home.selectedNotification.nome"></h1></strong> - <h1 class="h1List" ng-bind="home.selectedNotification.especialidade"></h1><br>
         <p class="pList" ng-bind="home.selectedNotification.data"></p> - <p class="pList" ng-bind="home.selectedNotification.horario"></p> -->                
     </div>

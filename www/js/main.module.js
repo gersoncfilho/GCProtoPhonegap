@@ -29,6 +29,32 @@ App.config(['$routeProvider',
       })
 }]);
 
+// Setando o service
+App.service('notificacaoService', function() {
+  this.notificacaoData = {};
+
+  this.user = function() {
+        return this.notificacaoData;
+  };
+
+  this.setNome = function(nome) {
+        this.notificacaoData.nome = nome;
+  };
+
+  this.getNome = function() {
+        return this.notificacaoData.nome;
+  };
+
+  this.setEspecialidade = function(especialidade) {
+        this.notificacaoData.especialidade = especialidade;
+  };
+
+  this.getEspecialidade = function() {
+        return this.notificacaoData.especialidade;
+  };
+});
+ 
+
 App.config(function(uiGmapGoogleMapApiProvider) {
 [
   function(uiGmapGoogleMapApiProvider){
@@ -40,18 +66,21 @@ App.config(function(uiGmapGoogleMapApiProvider) {
   }
 ]});
 
+
+
 //App.controller('DetalheController', ['$routeParams', function($scope, $routeParams, uiGmapGoogleMapApi){
 //    $scope.notification = $routeParams.notification;    
 //}]);
 
-App.controller('DetalheController', ['$scope', '$routeParams',
-  function($scope, $routeParams) {
-    $scope.name = $routeParams.name;
-  }]);
 
-App.controller('NotificacoesController', function($scope){ 
+
+App.controller('NotificacoesController', function($scope, $window, notificacaoService){ 
 
   $scope.titulo = "Notificações";
+
+  notificacaoService.setNome = $scope.notificacoes.nome;
+
+  notificacaoService.setEspecialidade = $scope.notificacoes.especialidade;
 
   $scope.notificacoes = [
     {
@@ -157,6 +186,15 @@ App.controller('NotificacoesController', function($scope){
 });
  
  
+App.controller('DetalheController', ['$scope', '$routeParams', function($scope, notificacaoService){
+
+  this.showNotificacao = function(notificacaoService){
+    this.nome = notificacaoService.getNome:
+  };
+  }
+
+}]);
+
 App.controller('CarteirasController', function($scope) {
  
     $scope.titulo = 'Carteiras';
@@ -181,6 +219,8 @@ App.controller('CarteirasController', function($scope) {
     ];
 
 });
+
+
 
 
 App.controller('FavoritosController', function($scope) {

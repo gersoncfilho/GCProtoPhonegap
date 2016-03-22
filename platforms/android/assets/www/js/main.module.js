@@ -1,6 +1,9 @@
 //Define an angular module for our app
 var App = angular.module('App', ['ngRoute','ui-listView', 'uiGmapgoogle-maps']); 
  
+
+/* ********** Services ********** */ 
+/* Notificacao */
 App.factory('notificacaoFactory', function(){
   var notificacaoFactory = {};
 
@@ -13,6 +16,24 @@ App.factory('notificacaoFactory', function(){
   return notificacaoFactory;
 });
 
+/* Carteiras*/
+App.factory('carteiraFactory', function(){
+  var carteiraFactory = {};
+
+  carteiraFactory.carteira = [];
+
+  carteiraFactory.set = function(value){
+    carteiraFactory.carteira = value;
+  };
+
+  return carteiraFactory;
+});
+
+/* ********** Services ********** */ 
+
+
+
+/* ********** Router Configuration ********** */ 
 App.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -36,37 +57,17 @@ App.config(['$routeProvider',
         templateUrl: 'templates/detalhe.html',
         controller: 'DetalheController'
       }).
+      when('/Carteiras/Carteira', {
+        templateUrl: 'templates/carteira.html',
+        controller: 'CarteirinhaController'
+      }).
       otherwise({
         redirectTo: '/Notificacoes'
       })
 }]);
+/* ********** Router Configuration ********** */  
 
-// Setando o service
-App.service('notificacaoService', function() {
-  this.notificacaoData = {};
-
-  this.user = function() {
-        return this.notificacaoData;
-  };
-
-  this.setNome = function(nome) {
-        this.notificacaoData.nome = nome;
-  };
-
-  this.getNome = function() {
-        return this.notificacaoData.nome;
-  };
-
-  this.setEspecialidade = function(especialidade) {
-        this.notificacaoData.especialidade = especialidade;
-  };
-
-  this.getEspecialidade = function() {
-        return this.notificacaoData.especialidade;
-  };
-});
- 
-
+/* ********** Google Maps Configuration ********** */ 
 App.config(function(uiGmapGoogleMapApiProvider) {
 [
   function(uiGmapGoogleMapApiProvider){
@@ -77,15 +78,10 @@ App.config(function(uiGmapGoogleMapApiProvider) {
     });
   }
 ]});
+/* ********** Google Maps Configuration ********** */ 
 
 
-
-//App.controller('DetalheController', ['$routeParams', function($scope, $routeParams, uiGmapGoogleMapApi){
-//    $scope.notification = $routeParams.notification;    
-//}]);
-
-
-
+/* ********** Controllers ********** */ 
 App.controller('NotificacoesController', function($scope, $location, notificacaoFactory){ 
 
   $scope.titulo = "Notificações";
@@ -228,9 +224,15 @@ App.controller('DetalheController', function($scope, notificacaoFactory, uiGmapG
     });
 });
 
-App.controller('CarteirasController', function($scope) {
+App.controller('CarteirasController', function($scope, $location, carteiraFactory) {
  
     $scope.titulo = 'Carteiras';
+
+    $scope.addCarteira = function(carteira){
+    carteiraFactory.set(carteira);
+
+    $location.path("/Carteiras/Carteira");
+  }
  
     $scope.carteiras = [
       {
@@ -253,7 +255,13 @@ App.controller('CarteirasController', function($scope) {
 
 });
 
+App.controller('CarteirinhaController', function($scope, carteiraFactory){
 
+  $scope.titulo = "Carteira";
+
+  $scope.carteira = carteiraFactory.carteira;
+
+});
 
 
 App.controller('FavoritosController', function($scope) {
@@ -313,3 +321,5 @@ App.controller('AgendaController', function($scope) {
     $scope.titulo = 'Agendar';
 
 });
+
+/* ********** Controllers ********** */ 

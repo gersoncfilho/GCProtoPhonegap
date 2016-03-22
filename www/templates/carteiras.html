@@ -8,7 +8,7 @@
     <!-- Lista de Notificações -->
     <div class="panel-body ng-cloak">
         <div class="ui-list-view-striped" ui-list-view="carteira in carteiras">
-            <div>                
+            <div ng-click="addCarteira(carteira)">                
                 <strong><h1 class="h1List" ng-bind="carteira.usuario"></h1></strong><h1 class="h1List">-</h1><h1 class="h1List" ng-bind="carteira.tipo"></h1><br>                  
             </div>
         </div>

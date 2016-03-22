@@ -157,42 +157,6 @@ App.controller('NotificacoesController', function($scope, $location, notificacao
       'email':'joseferreira@consultorio.com.br',
       'latitude':'-22.9135455',
       'longitude':'-43.2235144'
-    },{
-      'nome':'Dr. Sara da Silva',
-      'especialidade':'Cardiologista',
-      'data':'18 de março de 2016',
-      'horario':'10:00 hs',
-      'endereco1':'Norteshopping - Centro Médico',
-      'endereco2':'Av. Dom Hélder Câmara, 6000',
-      "endereco3":"Bloco 4 - Sala 1313",
-      'tel':'2689-0909',
-      'email':'joseferreira@consultorio.com.br',
-      'latitude':'-22.9135455',
-      'longitude':'-43.2235144'
-    },{
-      'nome':'Dr. José da Silva',
-      'especialidade':'Cardiologista',
-      'data':'18 de março de 2016',
-      'horario':'10:00 hs',
-      'endereco1':'Norteshopping - Centro Médico',
-      'endereco2':'Av. Dom Hélder Câmara, 4000',
-      "endereco3":"Bloco 4 - Sala 1313",
-      'tel':'2689-0909',
-      'email':'joseferreira@consultorio.com.br',
-      'latitude':'-22.9135455',
-      'longitude':'-43.2235144'
-    },{
-      'nome':'Dr. José da Silva',
-      'especialidade':'Cardiologista',
-      'data':'18 de março de 2016',
-      'horario':'10:00 hs',
-      'endereco1':'Norteshopping - Centro Médico',
-      'endereco2':'Av. Dom Hélder Câmara, 4000',
-      "endereco3":"Bloco 4 - Sala 1313",
-      'tel':'2689-0909',
-      'email':'joseferreira@consultorio.com.br',
-      'latitude':'-22.9135455',
-      'longitude':'-43.2235144'
     }
   ];
 });

@@ -1,24 +1,47 @@
 <!-- Notificações -->            
-<div class="panel panel-default" ng-controller="NotificacoesController as notCtrl">
-    <div class="text-center" style="margin-bottom: 20px;">
-        <h1 ng-bind="titulo"></h1>
-        <!-- <h3>Olá Tiago, seja bem-vindo.</h1> -->
+<div ng-controller="NotificacoesController as notCtrl" class="ng-cloak">
+    <div class="header">
+        <div class="text-center col-xs-3">
+            <img src="assets/logo_golden_vertical_50px.png" />
+        </div> 
+        <div class="col-xs-9" style="padding-top: 15px;">
+            <h1 class="text-center" style="font-family: RobotoBold" ng-bind="titulo"></h1>
+        </div>       
     </div>
 
-    <!-- Lista de Notificações -->
-    <div class="panel-heading">
-        <input class="form-control" ng-model="search.nome" placeholder="Procura por nome..." />
-    </div>
-
-    <div class="panel-body ng-cloak">
-        <div class="ui-list-view-striped" ui-list-view="notificacao in notificacoes | filter:search" options="listView">
-           <!--  <a ng-href="#/Notificacoes/detalhe"> -->
-                <div ng-click="addNotificacao(notificacao)">                
-                        <img class="thumb" ng-src="assets/agenda-thumb-cinza.png" width="20px"/>
-                        <strong><h1 class="h1List" ng-bind="notificacao.nome"></h1></strong><h1 class="h1List">-</h1><h1 class="h1List" ng-bind="notificacao.especialidade"></h1><br>
-                    <p class="pList" ng-bind="notificacao.data"></p> <p class="pList">às</p><p class="pList" ng-bind="notificacao.horario"></p>                                
-                </div>
-            <!-- </a> -->
+    <div class="text-center search">
+        <div class="search-left">
+            <img width="25px;" src="assets/search.png"/>
+        </div>
+        <div class="search-right">
+            <input ng-model="search.nome" placeholder="Procura por nome..." />
         </div>
     </div>
+
+    <div ui-list-view="notificacao in notificacoes | filter:search" options="listView">
+        <div class="nota" ng-click="addNotificacao(notificacao)">
+            <div class="nota-thumb">
+                <img ng-src="assets/calendario-thumb.png" width="35px"/>
+            </div>
+            <div class="nota-texto">
+                <strong><h1 style="display: inline-block;" ng-bind="notificacao.nome"></h1></strong> - <h1 style="display: inline-block;" ng-bind="notificacao.especialidade"></h1><br>
+                <h1 style="display: inline-block;" ng-bind="notificacao.data"></h1><h1 style="display: inline-block;">&nbsp;às&nbsp;</h1><h1 style="display: inline-block;" ng-bind="notificacao.horario"></h1>
+            </div>
+        </div>    
+    </div>
+
 <!-- Notificação -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

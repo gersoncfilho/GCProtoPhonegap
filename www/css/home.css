@@ -1,37 +1,36 @@
-@font-face{
+@font-face {
 	font-family: 'RobotoBold';
 	src: url(fonts/roboto/roboto-bold.ttf) format('truetype');
 	font-weight: bold;
 }
 
-@font-face{
+@font-face {
 	font-family: 'RobotoMedium';
 	src: url(fonts/roboto/roboto-medium.ttf) format('truetype');
 	font-weight: medium;
 }
 
-@font-face{
+@font-face {
 	font-family: 'RobotoLight';
 	src: url(fonts/roboto/roboto-light.ttf) format('truetype');
 	font-weight: medium;
 }
 
-@font-face{
+@font-face {
 	font-family: 'RobotoRegular';
 	src: url(fonts/roboto/roboto-regular.ttf) format('truetype');
 	font-weight: medium;
 }
 
-h1{
+h1 {
 	font-family: RobotoBold, sans-serif;
 	margin: 0;
 	font-size: 2rem;
 	font-weight: normal;
-	line-height: 1.5;
-
+	line-height: 1.2;
 }
 
-h2{
+h2 {
 	font-family: RobotoRegular, sans-serif;
 	margin: 0;
 	font-size: 1.5rem;
@@ -39,7 +38,7 @@ h2{
 	line-height: 1.5;
 }
 
-h3{
+h3 {
 	font-family: RobotoLight, sans-serif;
 	margin: 0;
 	font-size: 1rem;
@@ -47,7 +46,7 @@ h3{
 	line-height: 1.5;
 }
 
-h4{
+h4 {
 	font-family: RobotoLight, sans-serif;
 	margin: 0;
 	font-size: 0.5rem;
@@ -55,129 +54,242 @@ h4{
 	line-height: 1.5;
 }
 
-h5{
+h5 {
 	font-family: RobotoLight, sans-serif;
 	margin: 0;
 	font-size: 1rem;
 	font-weight: normal;
 }
 
-h6{
+h6 {
 	font-family: RobotoLight, sans-serif;
 	margin: 0;
 	font-size: 0,5rem;
 	font-weight: normal;
 }
 
-body{
+body {
 	margin-top: 20px;
 }
 
-.header{
+.header {
 	position: fixed;
-	top:0;
-	left:0;
+	top: 0;
+	left: 0;
 	z-index: 999;
 	width: 100%;
-	height: 70px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	margin-bottom:10px;
-	border-bottom: 1px solid #eee;
-	box-shadow: 0px 1px 3px #ababab;
+	height: 68px;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #EEE;
+	box-shadow: 0px 2px 3px #ABABAB;
 	overflow: hidden;
+	background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.00) 0%, #EAEAEA 82%);
+	border: 1px solid #979797;
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.50);
 }
 
-.panel-default{
+/* seacrch box */
+.search {
+	background: #FFFFFF;
+	box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.50);
+	width: 95%;
+	height: 60px;
+	position: relative;
+	margin-bottom: 20px;
+	margin-top: 91px;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.search-left {
+	float: left;
+	width: 20%;
+	height: 100%;
+	background-color: #B9B9B9;
+	position: absolute;
+	padding-top: 13px;
+}
+
+.search-left img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.search-right {
+	float: right;
+	width: 80%;
+	height: 100%;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	padding-top: 16px;
+}
+
+.search-right input {
+	display: block;
+	margin-left: 20px;
+	border: 0 solid;
+	font-family: RobotoLight, sans-serif;
+	font-size: 2rem;
+}
+
+/* notification box */
+.nota{
+	width: 95%;
+	height: 60px;
+	border: 2px solid #E8C324;
+	border-radius: 4px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.nota-thumb{
+	float: left;
+	width: 20%;
+	height: 100%;
+	position: absolute;
+	padding-top: 10px;
+}
+
+.nota-thumb img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.nota-texto{
+	float: right;
+	width: 80%;
+	height: 100%;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.nota-texto h1{
+	font-family: RobotoRegular
+	, sans-serif;
+	color: #9B9B9B;
+	font-size: 1em;
+	line-height: .2;
+}
+
+/* Rectangle 2: */
+.titulo {
+	background-color: #014B8D;
+	height: 90px;
+	padding-top: 20px;
+}
+
+.titulo h1, h2 {
+	color: #FFF;
+}
+
+.template-body {
+	background-color: #7E7E7E;
+	height: 100vh;
+	padding: 20px;
+}
+
+.logo {
+	margin: 0;
+}
+
+.wrapper {
+	width: 100%;
+	margin-top: 57px;
+}
+
+.panel-default {
 	margin-top: 20px;
 	border: 0px;
 }
 
-.notificacoes{
+.notificacoes {
 	width: 90%;
 	height: 90%;
 	margin: 0 auto;
 	background-color: #000;
-	opacity: .4;
+	opacity: 0.4;
 }
 
-.notificacoes1{
+.notificacoes1 {
 	position: fixed !important;
 	position: absolute;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
-.footer{
+.footer {
 	position: fixed;
-	bottom:0;
+	bottom: 0;
 	width: 100%;
+	padding-bottom:8px;
 }
 
-.blue{
-	background-color: #004B8D;
+.blue {
+	background-color: #F5F5F5;
 }
 
-.blue h1{
+.blue h1 {
 	font-size: 3vw;
 	color: white;
 }
 
-.space-top{
+.space-top {
 	margin-top: 10px;
 }
-.space-bottom{
+
+.space-bottom {
 	margin-bottom: 10px;
 }
 
-.space-minor{
+.space-minor {
 	margin-top: -15px;
 }
 
-.notifications{
+.notifications {
 	margin-left: 10px;
-	margin-right:10px;
+	margin-right: 10px;
 }
 
-.h1List{
+.h1List {
 	font-family: RobotoMedium, sans-serif;
 	font-size: 1em;
 	display: inline-block;
 	margin: 0 0 0 20px;
 }
 
-.pList{
+.pList {
 	font-family: RobotoLight, sans-serif;
 	display: inline-block;
 	margin-bottom: 0;
 	margin: 0 0 0 20px;
 }
 
-.panel-body .ui-list-view-bordered h1{
+.panel-body .ui-list-view-bordered h1 {
 	margin-top: 0;
 	margin-bottom: 0;
 	font-weight: bold;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+	display: none !important;
 }
 
-
-.thumb{
+.thumb {
 	display: inline;
 	float: left;
 }
 
-.angular-google-map-container{ 
-	height: 300px; 
+.angular-google-map-container {
+	height: 300px;
 }
-
-
-
-
-
-
-

@@ -39,6 +39,19 @@ App.factory('carteiraFactory', function(){
   return carteiraFactory;
 });
 
+/* Carteiras*/
+App.factory('favoritoFactory', function(){
+  var favoritoFactory = {};
+
+  favoritoFactory.favorito = [];
+
+  favoritoFactory.set = function(value){
+    favoritoFactory.favorito = value;
+  };
+
+  return favoritoFactory;
+});
+
 /* ********** Services ********** */ 
 
 
@@ -67,13 +80,13 @@ App.config(['$routeProvider',
         templateUrl: 'templates/agenda.html',
         controller: 'AgendaController'
       }).
-      when('/Notificacao/Detalhe', {
-        templateUrl: 'templates/detalhe.html',
-        controller: 'DetalheController'
-      }).
       when('/Carteiras/Carteira', {
         templateUrl: 'templates/carteira.html',
         controller: 'CarteirinhaController'
+      }).
+      when('/Favoritos/Detalhe', {
+        templateUrl: 'templates/detalhe.html',
+        controller: 'DetalheController'
       }).
       when('/DadosCadastrais', {
         templateUrl: 'templates/dadoscadastrais.html',
@@ -191,24 +204,24 @@ App.controller('DetalheController', function($scope, notificacaoFactory, uiGmapG
 
   $scope.notificacao = notificacaoFactory.notificacao;
 
-  $scope.map = [];
+  // $scope.map = [];
   
-  $scope.marker = [];
+  // $scope.marker = [];
 
-   uiGmapGoogleMapApi.then(function(maps) {
-      $scope.map = {center: {latitude: $scope.notificacao.latitude, longitude: $scope.notificacao.longitude }, zoom: 14};
+  //  uiGmapGoogleMapApi.then(function(maps) {
+  //     $scope.map = {center: {latitude: $scope.notificacao.latitude, longitude: $scope.notificacao.longitude }, zoom: 14};
 
-   $scope.marker = {
-       id: 0,
-       coords: {
-           latitude: $scope.notificacao.latitude,
-           longitude: $scope.notificacao.longitude
-          },
-          options: {
-           title: $scope.notificacao.nome
-          }
-       };
-    });
+  //  $scope.marker = {
+  //      id: 0,
+  //      coords: {
+  //          latitude: $scope.notificacao.latitude,
+  //          longitude: $scope.notificacao.longitude
+  //         },
+  //         options: {
+  //          title: $scope.notificacao.nome
+  //         }
+  //      };
+  //   });
 });
 
 App.controller('CarteirasController', function($scope, $location, carteiraFactory) {
@@ -248,12 +261,28 @@ App.controller('CarteirinhaController', function($scope, carteiraFactory){
 
   $scope.carteira = carteiraFactory.carteira;
 
+
+
+});
+
+App.controller('DetalheController', function($scope, favoritoFactory){
+
+  $scope.titulo = 'Detalhe Contato';
+  
+  $scope.favorito = favoritoFactory.favorito;
+
 });
 
 
-App.controller('FavoritosController', function($scope) {
+App.controller('FavoritosController', function($scope, $location, favoritoFactory) {
  
     $scope.titulo = 'Favoritos';
+
+    $scope.addFavorito = function(favorito){
+    favoritoFactory.set(favorito);
+
+    $location.path("/Favoritos/Detalhe");
+  }
  
     $scope.favoritos = [
       {

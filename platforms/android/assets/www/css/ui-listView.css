@@ -66,8 +66,14 @@
 }
 
 .ui-list-view-striped h1{
+    font-family: RobotoRegular, sans-serif;
+    color: #9B9B9B;
+    line-height: 1;
+}
+.ui-list-view-striped h2{
     font-family: RobotoLight, sans-serif;
-    color: #9B9B9B
+    color: #9B9B9B;
+    line-height: 1.2;
 }
 
 .ui-list-view-striped > .ui-list-view-cell:nth-child(even) {

@@ -1,33 +1,47 @@
-<!-- Notificações -->            
-<div class="panel panel-default" ng-controller="DetalheController">
-    
-    <div class="panel-body ng-cloak">
-        <!-- Google Maps -->
-        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-            <ui-gmap-marker
-                idKey='marker.id'
-                coords='marker.coords'
-                options='marker.options'>
-            </ui-gmap-marker>
-        </ui-gmap-google-map>
-                     
+<!-- Detalhe -->  
+<link rel="stylesheet" type="text/css" href="css/ui-listView.css" />          
+<div ng-controller="DetalheController">
+    <div class="header">
+        <div class="text-center col-xs-3">
+            <img src="assets/logo_golden_vertical_50px.png" />
+        </div> 
+        <div class="col-xs-9" style="padding-top: 15px;">
+            <h1 class="text-center" style="font-family: RobotoBold" ng-bind="titulo"></h1>
+        </div>       
+    </div>
 
-        
+    <div style="margin: 90px 0 0 20px;" back>
+        <img width="50px" src="assets/newicons/back.png"/> 
+    </div>
+
+    <div class="detalhe ng-cloak" style="margin-top:40px; margin-left:40px;">   
         <div>
-        <!--<p>notificacao = {{notificacao}}</p>-->
-
-            <h1 ng-bind="notificacao.nome"></h1>
-            <h2 ng-bind="notificacao.especialidade"></h2>
-            <h3 ng-bind="notificacao.endereco1"></h3>
-            <h3 ng-bind="notificacao.endereco2"></h3>
-            <h3 ng-bind="notificacao.endereco3"></h3>
-            <h3 ng-bind="notificacao.tel"></h3>
-            <h3 ng-bind="notificacao.email"></h3>
+            <h1 ng-bind="favorito.nome"></h1>
+            <h1 ng-bind="favorito.especialidade"></h1>
+            <h2 ng-bind="favorito.endereco1"></h2>
+            <h2 ng-bind="favorito.endereco2"></h2>
+            <h2 ng-bind="favorito.endereco3"></h2>
+            <h2 ng-bind="favorito.tel"></h2>
+            <h2 ng-bind="favorito.email"></h2>
+        </div>      
+    </div>
+    <div class="ui-list-view-striped" style="margin-top: 20px;">
+        <div style="height: 100px; background-color: background-color: #D8D8D8">
+            <div style="display: inline-block; margin-left: 40px; margin-top: 40px;">
+                <a href=""><h1>Mostrar no mapa</h1></a>
+            </div>
+            <div style="display: inline-block; float: right; margin-right: 40px; margin-top: 40px;">
+                <img width="10px" src='assets/newicons/chevron-right.png' />
+            </div>    
+        </div>
+        <div style="height: 100px; background-color: #EBEBEB">
+            <div style="display: inline-block; margin-left: 40px; margin-top: 40px;">
+                <a href=""><h1>Mostrar no mapa</h1></a>
+            </div>
+            <div style="display: inline-block; float: right; margin-right: 40px; margin-top: 40px;">
+                <img width="10px" src='assets/newicons/chevron-right.png' />
+            </div>    
         </div>
         
-
-       
-        <!-- <strong><h1 class="h1List" ng-bind="home.selectedNotification.nome"></h1></strong> - <h1 class="h1List" ng-bind="home.selectedNotification.especialidade"></h1><br>
-        <p class="pList" ng-bind="home.selectedNotification.data"></p> - <p class="pList" ng-bind="home.selectedNotification.horario"></p> -->                
     </div>
-<!-- Notificação -->
+</div>

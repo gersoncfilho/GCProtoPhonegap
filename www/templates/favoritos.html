@@ -1,22 +1,37 @@
-<!-- Favoritos -->            
-<div class="panel panel-default" ng-controller="FavoritosController">
-    <div class="text-center" style="margin-bottom: 20px;">
-        <h1 ng-bind="titulo"></h1>
-        <!-- <h3>Olá Tiago, seja bem-vindo.</h1> -->
+<link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
+    <div ng-controller="FavoritosController as favoritosCtrl">
+    <div class="header">
+        <div class="text-center col-xs-3">
+            <img src="assets/logo_golden_vertical_50px.png" />
+        </div> 
+        <div class="col-xs-9" style="padding-top: 15px;">
+            <h1 class="text-center" style="font-family: RobotoBold" ng-bind="titulo"></h1>
+        </div>       
     </div>
 
-    <!-- Lista de Favoritos -->
-    <div class="panel-body ng-cloak">
-        <div class="ui-list-view-striped" ui-list-view="favorito in favoritos">
-            <div>                
-                <strong><h1 ng-bind="favorito.nome"></h1></strong>
-                <h2 ng-bind="favorito.especialidade"></h1>
-                <h2 ng-bind="favorito.endereco1"></h2>
-                <h2 ng-bind="favorito.endereco2"></h2> 
-                <h2 ng-bind="favorito.endereco3"></h2> 
-                <h2 ng-bind="favorito.tel"></h2> 
-                <a><h2 ng-bind="favorito.email"></h2></a>                   
-            </div>
+    <div style="margin: 90px 0 0 20px;" back>
+        <img width="50px" src="assets/newicons/back.png"/> 
+    </div>
+
+    <div style="margin-top: 40px;">
+        <div class="ui-list-view-striped" ui-list-view="favorito in favoritos" options='listView' style="height: 233px !important;">
+            <div ng-click="addFavorito(favorito)"
+                <div style="margin-left: 40px; display: inline-block; ">                
+                    <strong><h1 ng-bind="favorito.nome"></h1></strong>
+                    <h2 ng-bind="favorito.especialidade"></h2>
+                    <!-- <h2 ng-bind="favorito.endereco1"></h2>
+                    <h2 ng-bind="favorito.endereco2"></h2> 
+                    <h2 ng-bind="favorito.endereco3"></h2> 
+                    <h2 ng-bind="favorito.tel"></h2> 
+                    <a><h2 ng-bind="favorito.email"></h2></a>-->         
+                </div>
+                <div style="float: right; display: inline-block; margin-right:40px; margin-top: 10px;">
+                    <img width="15px;" src="assets/newicons/chevron-right.png">
+                </div>
         </div>
     </div>
+</div>
+
 <!-- Favoritos -->
+
+

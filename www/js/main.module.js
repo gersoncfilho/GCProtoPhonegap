@@ -41,9 +41,9 @@ App.config(['$routeProvider',
         templateUrl: 'templates/notificacoes.html',
         controller: 'NotificacoesController'
     }).
-      when('/Carteiras', {
-        templateUrl: 'templates/carteiras.html',
-        controller: 'CarteirasController'
+      when('/MeuPlano', {
+        templateUrl: 'templates/meuplano.html',
+        'controller': 'MeuPlanoController'
       }).
       when('/Favoritos', {
         templateUrl: 'templates/favoritos.html',
@@ -84,7 +84,7 @@ App.config(function(uiGmapGoogleMapApiProvider) {
 /* ********** Controllers ********** */ 
 App.controller('NotificacoesController', function($scope, $location, notificacaoFactory){ 
 
-  $scope.titulo = "Notificações";
+  $scope.titulo = "NOTIFICAÇÕES";
 
   $scope.addNotificacao = function(notificacao){
     notificacaoFactory.set(notificacao);
@@ -106,20 +106,22 @@ App.controller('NotificacoesController', function($scope, $location, notificacao
       'tel':'2689-0909',
       'email':'joseferreira@consultorio.com.br',
       'latitude':'-22.9135455',
-      'longitude':'-43.2235144'
+      'longitude':'-43.2235144',
+      'thumb':'assets/agenda-thumb-branca.png'
     },
     {
-      'nome':'Dr. Pedro da Silva',
-      'especialidade':'Cardiologista',
-      'data':'18 de março de 2016',
-      'horario':'10:00 hs',
+      'nome':'FELIZ ANIVERSÁRIO!!',
+      'especialidade':'',
+      'data':'PARABÉNS PELO SEU DIA.',
+      'horario':'',
       'endereco1':'Norteshopping - Centro Médico',
       'endereco2':'Av. Dom Hélder Câmara, 4000',
       "endereco3":"Bloco 4 - Sala 1313",
       'tel':'2689-0909',
       'email':'joseferreira@consultorio.com.br',
       'latitude':'-22.9135455',
-      'longitude':'-43.2235144'
+      'longitude':'-43.2235144',
+      'thumb':'assets/message-thumb-branco.png'
     },
     {
       'nome':'Dr. Sara da Silva',
@@ -132,7 +134,8 @@ App.controller('NotificacoesController', function($scope, $location, notificacao
       'tel':'2689-0909',
       'email':'joseferreira@consultorio.com.br',
       'latitude':'-22.9135455',
-      'longitude':'-43.2235144'
+      'longitude':'-43.2235144',
+      'thumb':'assets/agenda-thumb-branca.png'
     },{
       'nome':'Dr. Paulo da Silva',
       'especialidade':'Cardiologista',
@@ -144,7 +147,8 @@ App.controller('NotificacoesController', function($scope, $location, notificacao
       'tel':'2689-0909',
       'email':'joseferreira@consultorio.com.br',
       'latitude':'-22.9135455',
-      'longitude':'-43.2235144'
+      'longitude':'-43.2235144',
+      'thumb':'assets/agenda-thumb-branca.png'
     },{
       'nome':'Dr. Paulo da Silva',
       'especialidade':'Nutricionista',
@@ -156,7 +160,8 @@ App.controller('NotificacoesController', function($scope, $location, notificacao
       'tel':'2689-0909',
       'email':'joseferreira@consultorio.com.br',
       'latitude':'-22.9135455',
-      'longitude':'-43.2235144'
+      'longitude':'-43.2235144',
+      'thumb':'assets/agenda-thumb-branca.png'
     }
   ];
 });
@@ -284,6 +289,10 @@ App.controller('AgendaController', function($scope) {
  
     $scope.titulo = 'Agendar';
 
+});
+
+App.controller('MeuPlanoController', function($scope){
+  $scope.titulo = 'MEU PLANO'
 });
 
 /* ********** Controllers ********** */ 

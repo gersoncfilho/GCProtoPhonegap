@@ -1,3 +1,28 @@
+@font-face {
+    font-family: 'RobotoBold';
+    src: url(fonts/roboto/roboto-bold.ttf) format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url(fonts/roboto/roboto-medium.ttf) format('truetype');
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url(fonts/roboto/roboto-light.ttf) format('truetype');
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url(fonts/roboto/roboto-regular.ttf) format('truetype');
+    font-weight: medium;
+}
+
+
 .ui-list-view {
     overflow: auto !important;
     position: relative;
@@ -14,6 +39,7 @@
     -ms-user-select: none;
     user-select: none;
     cursor: default;
+    margin: 0;
 }
 .ui-list-view-anchor {
     position: absolute;
@@ -34,11 +60,17 @@
 }
 
 .ui-list-view-striped {
-    border: solid 1pt #eee;
+    border: solid 0pt #eee;
+    background-color: #D8D8D8;
+}
+
+.ui-list-view-striped h1{
+    font-family: RobotoLight, sans-serif;
+    color: #9B9B9B
 }
 
 .ui-list-view-striped > .ui-list-view-cell:nth-child(even) {
-    background: #F9FaFb;
+    background: #EBEBEB;
 }
 
 .ui-list-view-striped > .ui-list-view-cell > .ui-list-view-cell-content > * {

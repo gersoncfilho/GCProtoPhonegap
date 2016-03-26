@@ -117,6 +117,7 @@ body {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 5px;
 }
 
 .search-right {
@@ -133,11 +134,12 @@ body {
 	margin-left: 20px;
 	border: 0 solid;
 	font-family: RobotoLight, sans-serif;
-	font-size: 2rem;
+	font-size: 1.6rem;
+	padding-top: 6px;
 }
 
 /* notification box */
-.nota{
+.nota {
 	width: 95%;
 	height: 60px;
 	border: 2px solid #E8C324;
@@ -148,7 +150,7 @@ body {
 	margin-right: auto;
 }
 
-.nota-thumb{
+.nota-thumb {
 	float: left;
 	width: 20%;
 	height: 100%;
@@ -162,7 +164,7 @@ body {
 	margin-right: auto;
 }
 
-.nota-texto{
+.nota-texto {
 	float: right;
 	width: 80%;
 	height: 100%;
@@ -172,12 +174,11 @@ body {
 	padding-left: 10px;
 }
 
-.nota-texto h1{
-	font-family: RobotoRegular
-	, sans-serif;
+.nota-texto h1 {
+	font-family: RobotoRegular, sans-serif;
 	color: #9B9B9B;
 	font-size: 1em;
-	line-height: .2;
+	line-height: 0.2;
 }
 
 /* Rectangle 2: */
@@ -232,7 +233,7 @@ body {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	padding-bottom:8px;
+	padding-bottom: 8px;
 }
 
 .blue {
@@ -293,3 +294,18 @@ body {
 .angular-google-map-container {
 	height: 300px;
 }
+
+/*Shapes*/
+#circle { 
+	width: 100px; 
+	height: 100px; 
+	background: red; 
+	-moz-border-radius: 50px; 
+	-webkit-border-radius: 50px; 
+	border-radius: 50px; 
+}
+
+
+
+
+

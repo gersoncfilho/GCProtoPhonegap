@@ -1,4 +1,5 @@
 <!-- Notificações -->            
+<link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
 <div ng-controller="NotificacoesController as notCtrl" class="ng-cloak">
     <div class="header">
         <div class="text-center col-xs-3">
@@ -11,24 +12,27 @@
 
     <div class="text-center search">
         <div class="search-left">
-            <img width="25px;" src="assets/search.png"/>
+            <img width="20px;" src="assets/search.png"/>
         </div>
         <div class="search-right">
             <input ng-model="search.nome" placeholder="Procura por nome..." />
         </div>
     </div>
 
-    <div ui-list-view="notificacao in notificacoes | filter:search" options="listView">
-        <div class="nota" ng-click="addNotificacao(notificacao)">
-            <div class="nota-thumb">
-                <img ng-src="assets/calendario-thumb.png" width="35px"/>
+    <div ui-list-view="notificacao in notificacoes | filter:search" options="listView" class="ui-list-view-striped">
+        <!-- <div ng-click="addNotificacao(notificacao)"> -->
+        <div>
+            <div style="width: 20%; height: 100%; float: left; margin-top: 15px;" class="text-center">
+                <img src="{{notificacao.thumb}}" width="35px"/>
             </div>
-            <div class="nota-texto">
-                <strong><h1 style="display: inline-block;" ng-bind="notificacao.nome"></h1></strong> - <h1 style="display: inline-block;" ng-bind="notificacao.especialidade"></h1><br>
-                <h1 style="display: inline-block;" ng-bind="notificacao.data"></h1><h1 style="display: inline-block;">&nbsp;às&nbsp;</h1><h1 style="display: inline-block;" ng-bind="notificacao.horario"></h1>
+            <div style="width: 80%; height: 100%; float: right; margin-bottom: 20px; margin-top: 8px;">
+                <strong><h1 style="display: inline-block;" ng-bind="notificacao.nome"></h1></strong>&nbsp;&nbsp;<h1 style="display: inline-block;" ng-bind="notificacao.especialidade"></h1><br>
+                <h1 style="display: inline-block;" ng-bind="notificacao.data"></h1><h1 style="display: inline-block;">&nbsp;&nbsp;</h1><h1 style="display: inline-block;" ng-bind="notificacao.horario"></h1>
             </div>
-        </div>    
-    </div>
+        
+        </div>
+    </div>    
+</div>
 
 <!-- Notificação -->
 

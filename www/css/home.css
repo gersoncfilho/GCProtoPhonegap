@@ -308,6 +308,48 @@ body {
 	box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.50);
 }
 
+/*Form Dados Cadastrais*/
+
+.form{
+	margin: 0 10px 0 10px;
+}
+
+.field{
+	background: #EBEBEB;
+	border: 1px solid #979797;
+	padding: 5px;
+}
+
+.field h1{
+	/* Nome:: */
+	font-family: RobotoLight;
+	font-size: 12.09px;
+	color: #4A4A4A;
+	margin-bottom: 5px;
+}
+
+.field h2{
+	/* Paulo Souza: */
+	font-family: RobotoMedium;
+	font-size: 14.46px;
+	color: #4A4A4A;
+}
+
+.form .field input{
+	font-family: RobotoMedium;
+	font-size: 14.46px;
+	color: #4A4A4A;
+	background-color: transparent;
+	width: 100%
+}
+
+/*End Dados Cadastrais*/
+
+
+.footer .icon{
+	display: inline-block;;
+}
+
 
 
 

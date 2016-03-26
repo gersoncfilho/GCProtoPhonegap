@@ -1,5 +1,6 @@
 <!-- Carteiras -->            
-<div ng-controller="CarteirasController">
+<link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
+<div ng-controller="CarteirasController as carteirasctrl">
     <div class="header">
         <div class="text-center col-xs-3">
             <img src="assets/logo_golden_vertical_50px.png" />
@@ -8,15 +9,21 @@
             <h1 class="text-center" style="font-family: RobotoBold" ng-bind="titulo"></h1>
         </div>       
     </div>
-    
-    <!-- Lista de Carteiras -->
-    <div class="ng-cloak">
-        <div class="ui-list-view-striped" ui-list-view="carteira in carteiras">
-            <div ng-click="addCarteira(carteira)">                
-                <strong><h1 class="h1List" ng-bind="carteira.usuario"></h1></strong><h1 class="h1List">-</h1><h1 class="h1List" ng-bind="carteira.tipo"></h1><br>                  
-            </div>
-        </div>
+
+    <div style="margin: 90px 0 0 20px;" back>
+        <img width="50px" src="assets/newicons/back.png"/> 
     </div>
     
+    <!-- Lista de Carteiras -->
+    <div style="margin-top: 40px;">
+        <div  ui-list-view="carteira in carteiras" options="listView"  class="ui-list-view-striped" style="height: 140px !important;"> 
+            <div ng-click="addCarteira(carteira)"> 
+                <h1 style="display: inline-block; padding-left: 30px;" ng-bind="carteira.usuario"></h1>&nbsp;&nbsp;<h1 style="display: inline-block;" ng-bind="carteira.tipo"></h1><span style="float: right; margin-right: 30px;"><img height="20px" ng-src="assets/newicons/chevron-right.png"/></span>         
+            </div>
+        </div>   
+    </div>
 </div>
 <!-- Carteiras -->
+
+
+

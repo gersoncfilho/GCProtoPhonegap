@@ -1,6 +1,16 @@
 //Define an angular module for our app
 var App = angular.module('App', ['ngRoute','ui-listView', 'uiGmapgoogle-maps']); 
  
+App.directive('back', ['$window', function($window) {
+        return {
+            restrict: 'A',
+            link: function (scope, elem, attrs) {
+                elem.bind('click', function () {
+                    $window.history.back();
+                });
+            }
+        };
+}]);
 
 /* ********** Services ********** */ 
 /* Notificacao */
@@ -41,6 +51,10 @@ App.config(['$routeProvider',
         templateUrl: 'templates/notificacoes.html',
         controller: 'NotificacoesController'
     }).
+      when('/MeuPlano', {
+        templateUrl: 'templates/meuplano.html',
+        'controller': 'MeuPlanoController'
+      }).
       when('/Carteiras', {
         templateUrl: 'templates/carteiras.html',
         controller: 'CarteirasController'
@@ -60,6 +74,10 @@ App.config(['$routeProvider',
       when('/Carteiras/Carteira', {
         templateUrl: 'templates/carteira.html',
         controller: 'CarteirinhaController'
+      }).
+      when('/DadosCadastrais', {
+        templateUrl: 'templates/dadoscadastrais.html',
+        controller: 'DadosCadastraisController'
       }).
       otherwise({
         redirectTo: '/Notificacoes'
@@ -290,5 +308,14 @@ App.controller('AgendaController', function($scope) {
     $scope.titulo = 'Agendar';
 
 });
+
+App.controller('MeuPlanoController', function($scope){
+  $scope.titulo = 'MEU PLANO'
+});
+
+App.controller('DadosCadastraisController', function($scope){
+  $scope.titulo = 'DADOS CADASTRAIS'
+});
+
 
 /* ********** Controllers ********** */ 

@@ -52,6 +52,19 @@ App.factory('favoritoFactory', function(){
   return favoritoFactory;
 });
 
+/* Carteiras*/
+App.factory('reembolsoFactory', function(){
+  var reembolsoFactory = {};
+
+  reembolsoFactory.reembolso = [];
+
+  reembolsoFactory.set = function(value){
+    reembolsoFactory.reembolso = value;
+  };
+
+  return reembolsoFactory;
+});
+
 /* ********** Services ********** */ 
 
 
@@ -99,6 +112,10 @@ App.config(['$routeProvider',
       when('/SolicitaReembolso', {
         templateUrl: 'templates/solicitareembolso.html',
         controller: 'SolicitaReembolsoController'
+      }).
+      when('/ConsultaReembolsos', {
+        templateUrl: 'templates/consultareembolsos.html',
+        controller: 'ConsultaReembolsoController'
       }).
       otherwise({
         redirectTo: '/Notificacoes'
@@ -352,6 +369,51 @@ App.controller('MeuPlanoController', function($scope){
 
 App.controller('DadosCadastraisController', function($scope){
   $scope.titulo = 'DADOS CADASTRAIS'
+});
+
+App.controller('ReembolsosController', function($scope){
+  $scope.titulo = 'Reembolsos';
+});
+
+App.controller('SolicitaReembolsoController', function($scope){
+  $scope.titulo = 'Solicita Reembolso'
+});
+
+App.controller('ConsultaReembolsoController', function($scope, $location, reembolsoFactory){
+  $scope.titulo = 'Consulta Reembolsos';
+  $scope.reembolsos = 
+  [
+    {
+      'cpf_cnpj':'00.000.000/0001-20',
+      'razao':'CLINICA MEDICA TESTE LTDA',
+      'dataevento':'20/01/2001',
+      'datapagamento':'20/02/2001',
+      'processo':'01352072777',
+      'reembolso_solicitado':'R$100,00',
+      'bac':'237/2456/123334',
+      'valor_reembolsado':'R$100,00'
+    },
+    {
+      'cpf_cnpj':'00.000.000/0001-20',
+      'razao':'CLINICA MEDICA TESTE LTDA',
+      'dataevento':'20/01/2001',
+      'datapagamento':'20/02/2001',
+      'processo':'01352072777',
+      'reembolso_solicitado':'R$100,00',
+      'bac':'237/2456/123334',
+      'valor_reembolsado':'R$100,00'
+    },
+    {
+      'cpf_cnpj':'00.000.000/0001-20',
+      'razao':'CLINICA MEDICA TESTE LTDA',
+      'dataevento':'20/01/2001',
+      'datapagamento':'20/02/2001',
+      'processo':'01352072777',
+      'reembolso_solicitado':'R$100,00',
+      'bac':'237/2456/123334',
+      'valor_reembolsado':'R$100,00'
+    }
+  ];
 });
 
 

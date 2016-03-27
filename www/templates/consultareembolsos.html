@@ -1,0 +1,62 @@
+<!-- Solcita Reembolso -->
+<link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
+<div class="container" ng-controller="ConsultaReembolsoController as consultareembCtrl">
+    <div class="header">
+        <div class="text-center col-xs-3">
+            <img src="assets/logo_golden_vertical_50px.png" />
+        </div> 
+        <div class="col-xs-9" style="padding-top: 15px;">
+            <h1 class="text-center" style="font-family: RobotoBold" ng-bind="titulo"></h1>
+        </div>       
+    </div>
+
+    <div style="margin-top: 30px" back>
+        <img width="50px" src="assets/newicons/back.png"/> 
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+	    <div class="col-xs-20">
+	    	<div class="field">
+	    		<h1>Nome:</h1>
+	    		<h2>Pedro Souza</h2>
+	    	</div>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-xs-10" style="margin-right: 0 !important; padding-right: 0 !important">
+    		<div class="field">
+				<h1>Matrícula:</h1>
+				<h2>989989989</h2>
+			</div>
+		</div>
+		<div class="col-xs-10" style="margin-left: 0 !important; padding-left: 0 !important">
+			<div class="field">
+				<h1>CPF:</h1>
+				<h2>00.000.000-00</h2>
+			</div>
+		</div>
+    </div>
+    <br>
+    <div class="row">
+    	<div class="col-xs-20 text-center">
+    		<h1>Reembolsos Pagos
+    	</div>
+    </div>
+
+   <div ui-list-view="reembolso in reembolsos" options="listView" class="ui-list-view-striped">
+        <!-- <div ng-click="addNotificacao(notificacao)"> -->
+        <div>
+                <span style="display: inline-block;"><h2>CPF/CNPJ:</h2></span><strong>&nbsp;<h2 style="display: inline-block; color: black" ng-bind="reembolso.cpf_cnpj"></h2><BR>
+                <span style="display: inline-block;"><h2>RAZÃO SOCIAL:</h2></span><strong>&nbsp;<h2 style="display: inline-block; color: black;" ng-bind="reembolso.razao"></h2><br>
+                <span style="display: inline-block;"><h2>DATA EVENTO:</h2></span><strong>&nbsp;<h2 style="display: inline-block; color: black;" ng-bind="reembolso.dataevento"></h2>&nbsp;&nbsp;
+                <span style="display: inline-block;"><h2>DATA PAGAMENTO:</h2></span><strong>&nbsp;<h2 style="display: inline-block; color: black;" ng-bind="reembolso.datapagamento"></h2>
+                <span style="display: inline-block;"><h2>PROCESSO:</h2></span><strong>&nbsp;<h2 style="display: inline-block; color: black;" ng-bind="reembolso.processo"></h2>&nbsp;&nbsp;
+                <span style="display: inline-block;"><h2>REEMB SOLICITADO:</h2></span><strong>&nbsp;<h2 style="display: inline-block; color: black;" ng-bind="reembolso.reembolso_solicitado"></h2><br>
+                <span style="display: inline-block;"><h2>BANCO/AG/CONTA:</h2></span><strong>&nbsp;<h2 style="display: inline-block; color: black;" ng-bind="reembolso.bac"></h2><br>
+                <span style="display: inline-block;"><h2>VALOR REEMBOLSADO:</h2></span><strong>&nbsp;<h2 style="display: inline-block; color: black;" ng-bind="reembolso.valor_reembolsado"></h2>   
+        </div>
+    </div>   
+    
+
+   
+</div>

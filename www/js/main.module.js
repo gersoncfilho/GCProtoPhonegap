@@ -158,6 +158,18 @@ App.config(['$routeProvider',
         templateUrl: 'templates/consultasenhas.html',
         controller: 'ConsultaSenhasController'
       }).
+      when('/Relacionamento', {
+        templateUrl: 'templates/relacionamento.html',
+        controller: 'RelacionamentoController'
+      }).
+      when('/FaleConosco', {
+        templateUrl: 'templates/faleconosco.html',
+        controller: 'FaleConoscoController'
+      }).
+      when('/Faq', {
+        templateUrl: 'templates/faq.html',
+        controller: 'FaqController'
+      }).
       otherwise({
         redirectTo: '/Notificacoes'
       })
@@ -572,6 +584,13 @@ App.controller('ConsultaSenhasController', function($scope){
   ];
 
 });
+
+App.controller('FaleConoscoController', function($scope){
+
+  $scope.titulo = 'Fale Conosco';
+
+});
+
 
 
 

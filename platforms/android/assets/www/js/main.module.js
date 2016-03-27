@@ -150,6 +150,14 @@ App.config(['$routeProvider',
         templateUrl: 'templates/senhas.html',
         controller: 'SenhasController'
       }).
+      when('/SolicitacaoProcedimento', {
+        templateUrl: 'templates/solicitacaoprocedimento.html',
+        controller: 'ProcedimentosController'
+      }).
+      when('/ConsultaSenha', {
+        templateUrl: 'templates/consultasenhas.html',
+        controller: 'ConsultaSenhasController'
+      }).
       otherwise({
         redirectTo: '/Notificacoes'
       })
@@ -524,5 +532,50 @@ App.controller('DetalheResultadoController', function($scope, resultadoFactory){
   $scope.resultado = resultadoFactory.resultado;
 
 });
+
+App.controller('ProcedimentosController', function($scope){
+
+  $scope.titulo = 'Solicitação de Procedimentos';
+
+});
+
+App.controller('ConsultaSenhasController', function($scope){
+
+  $scope.titulo = 'Consulta de Senhas';
+
+  $scope.senhas = 
+  [
+    {
+      'cpf_cnpj':'0.000.000/0001-20',
+      'razao':'CLINICA MEDICA TESTE LTDA',
+      'dataevento':'20/01/2001',
+      'dataliberacao':'22/01/2001',
+      'processo':'1352072777',
+      'senha':'45445AS9830943'
+    },
+    {
+      'cpf_cnpj':'0.000.000/0001-20',
+      'razao':'CLINICA MEDICA TESTE LTDA',
+      'dataevento':'20/01/2001',
+      'dataliberacao':'22/01/2001',
+      'processo':'1352072777',
+      'senha':'45445AS9830943'
+    },
+    {
+      'cpf_cnpj':'0.000.000/0001-20',
+      'razao':'CLINICA MEDICA TESTE LTDA',
+      'dataevento':'20/01/2001',
+      'dataliberacao':'22/01/2001',
+      'processo':'1352072777',
+      'senha':'45445AS9830943'
+    }
+  ];
+
+});
+
+
+
+
+
 
 /* ********** Controllers ********** */ 

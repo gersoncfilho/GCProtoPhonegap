@@ -158,6 +158,18 @@ App.config(['$routeProvider',
         templateUrl: 'templates/consultasenhas.html',
         controller: 'ConsultaSenhasController'
       }).
+      when('/Relacionamento', {
+        templateUrl: 'templates/relacionamento.html',
+        controller: 'RelacionamentoController'
+      }).
+      when('/FaleConosco', {
+        templateUrl: 'templates/faleconosco.html',
+        controller: 'FaleConoscoController'
+      }).
+      when('/Faq', {
+        templateUrl: 'templates/faq.html',
+        controller: 'FaqController'
+      }).
       otherwise({
         redirectTo: '/Notificacoes'
       })
@@ -292,7 +304,7 @@ App.controller('NotificacoesController', function($scope, $location, notificacao
 
 App.controller('CarteirasController', function($scope, $location, carteiraFactory) {
  
-    $scope.titulo = 'Carteiras';
+    $scope.titulo = 'CARTEIRAS';
 
     $scope.addCarteira = function(carteira){
     carteiraFactory.set(carteira);
@@ -323,7 +335,7 @@ App.controller('CarteirasController', function($scope, $location, carteiraFactor
 
 App.controller('CarteirinhaController', function($scope, carteiraFactory){
 
-  $scope.titulo = "Carteira";
+  $scope.titulo = "CARTEIRA";
 
   $scope.carteira = carteiraFactory.carteira;
 
@@ -572,6 +584,19 @@ App.controller('ConsultaSenhasController', function($scope){
   ];
 
 });
+
+App.controller('FaleConoscoController', function($scope){
+
+  $scope.titulo = 'Fale Conosco';
+
+});
+
+App.controller('FaqController', function($scope){
+
+  $scope.titulo = 'FAQ';
+
+});
+
 
 
 

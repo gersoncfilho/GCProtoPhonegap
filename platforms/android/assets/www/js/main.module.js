@@ -72,6 +72,10 @@ App.config(['$routeProvider',
         templateUrl: 'templates/carteiras.html',
         controller: 'CarteirasController'
       }).
+      when('/Reembolsos', {
+        templateUrl: 'templates/reembolsos.html',
+        controller: 'ReembolsosController'
+      }).
       when('/Favoritos', {
         templateUrl: 'templates/favoritos.html',
         controller: 'FavoritosController'
@@ -91,6 +95,10 @@ App.config(['$routeProvider',
       when('/DadosCadastrais', {
         templateUrl: 'templates/dadoscadastrais.html',
         controller: 'DadosCadastraisController'
+      }).
+      when('/SolicitaReembolso', {
+        templateUrl: 'templates/solicitareembolso.html',
+        controller: 'SolicitaReembolsoController'
       }).
       otherwise({
         redirectTo: '/Notificacoes'

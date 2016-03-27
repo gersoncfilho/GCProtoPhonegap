@@ -52,7 +52,7 @@ App.factory('favoritoFactory', function(){
   return favoritoFactory;
 });
 
-/* Carteiras*/
+/* Reembolsos*/
 App.factory('reembolsoFactory', function(){
   var reembolsoFactory = {};
 
@@ -65,6 +65,19 @@ App.factory('reembolsoFactory', function(){
   return reembolsoFactory;
 });
 
+
+/* Busca*/
+App.factory('resultadoFactory', function(){
+  var resultadoFactory = {};
+
+  resultadoFactory.resultado = [];
+
+  resultadoFactory.set = function(value){
+    resultadoFactory.resultado = value;
+  };
+  console.log(resultadoFactory);
+  return resultadoFactory;
+});
 /* ********** Services ********** */ 
 
 
@@ -116,6 +129,26 @@ App.config(['$routeProvider',
       when('/ConsultaReembolsos', {
         templateUrl: 'templates/consultareembolsos.html',
         controller: 'ConsultaReembolsoController'
+      }).
+      when('/Servicos', {
+        templateUrl: 'templates/servicos.html',
+        controller: 'ServicosController'
+      }).  
+      when('/BuscaReferenciados', {
+        templateUrl: 'templates/busca.html',
+        controller: 'ReferenciadosController'
+      }).  
+      when('/ResultadoBusca', {
+        templateUrl: 'templates/resultadobusca.html',
+        controller: 'ResultadoBuscaController'
+      }).  
+      when('/ResultadoBusca/DetalheResultado', {
+        templateUrl: 'templates/detalheresultado.html',
+        controller: 'DetalheResultadoController'
+      }).
+      when('/Senhas', {
+        templateUrl: 'templates/senhas.html',
+        controller: 'SenhasController'
       }).
       otherwise({
         redirectTo: '/Notificacoes'
@@ -223,11 +256,11 @@ App.controller('NotificacoesController', function($scope, $location, notificacao
 });
  
  
-App.controller('DetalheController', function($scope, notificacaoFactory, uiGmapGoogleMapApi){
+// App.controller('DetalheController', function($scope, notificacaoFactory, uiGmapGoogleMapApi){
 
-  $scope.titulo = "Detalhe";
+//   $scope.titulo = "Detalhe";
 
-  $scope.notificacao = notificacaoFactory.notificacao;
+//   $scope.notificacao = notificacaoFactory.notificacao;
 
   // $scope.map = [];
   
@@ -247,7 +280,7 @@ App.controller('DetalheController', function($scope, notificacaoFactory, uiGmapG
   //         }
   //      };
   //   });
-});
+// });
 
 App.controller('CarteirasController', function($scope, $location, carteiraFactory) {
  
@@ -364,11 +397,11 @@ App.controller('AgendaController', function($scope) {
 });
 
 App.controller('MeuPlanoController', function($scope){
-  $scope.titulo = 'MEU PLANO'
+  $scope.titulo = 'MEU PLANO';
 });
 
 App.controller('DadosCadastraisController', function($scope){
-  $scope.titulo = 'DADOS CADASTRAIS'
+  $scope.titulo = 'DADOS CADASTRAIS';
 });
 
 App.controller('ReembolsosController', function($scope){
@@ -376,7 +409,7 @@ App.controller('ReembolsosController', function($scope){
 });
 
 App.controller('SolicitaReembolsoController', function($scope){
-  $scope.titulo = 'Solicita Reembolso'
+  $scope.titulo = 'Solicita Reembolso';
 });
 
 App.controller('ConsultaReembolsoController', function($scope, $location, reembolsoFactory){
@@ -416,5 +449,80 @@ App.controller('ConsultaReembolsoController', function($scope, $location, reembo
   ];
 });
 
+App.controller('ServicosController', function($scope){
+  $scope.titulo = 'Serviços';
+});
+
+App.controller('ReferenciadosController', function($scope){
+  $scope.titulo = 'Busca Referenciados';
+});
+
+App.controller('ResultadoBuscaController', function($scope, $location, resultadoFactory) {
+ 
+    $scope.titulo = 'Resultado Busca';
+
+    $scope.addResultado = function(resultado){
+
+      resultadoFactory.set(resultado);
+      $location.path("/ResultadoBusca/DetalheResultado");
+      console.log('from inside controller' + resultado);
+    };
+
+     $scope.resultados = 
+     [
+      {
+        'nome':'Dr. José da Silva',
+        'especialidade':'Cardiologista',
+        'endereco1':'Norteshopping - Centro Médico',
+        'endereco2':'Av. Dom Hélder Câmara, 4000',
+        "endereco3":"Bloco 4 - Sala 1313",
+        'tel':'2689-0909',
+        'email':'joseferreira@consultorio.com.br',
+        'latitude':'-22.9135455',
+        'longitude':'-43.2235144'
+      },
+      {
+        'nome':'Dr. Pedro Ricardo',
+        'especialidade':'Nutricionista',
+        'endereco1':'Barrashopping - Centro Médico',
+        'endereco2':'Av. das Américas, 5000',
+        "endereco3":"Bloco 2 - Sala 3131",
+        'tel':'8899-9999',
+        'email':'joseferreira@consultorio.com.br',
+        'latitude':'-22.9135455',
+        'longitude':'-43.2235144'
+      },
+      {
+        'nome':'Dr. José da Silva',
+        'especialidade':'Cardiologista',
+        'endereco1':'Norteshopping - Centro Médico',
+        'endereco2':'Av. Dom Hélder Câmara, 4000',
+        "endereco3":"Bloco 4 - Sala 1313",
+        'tel':'2689-0909',
+        'email':'joseferreira@consultorio.com.br',
+        'latitude':'-22.9135455',
+        'longitude':'-43.2235144'
+      },
+      {
+        'nome':'Dr. José da Silva',
+        'especialidade':'Cardiologista',
+        'endereco1':'Norteshopping - Centro Médico',
+        'endereco2':'Av. Dom Hélder Câmara, 4000',
+        "endereco3":"Bloco 4 - Sala 1313",
+        'tel':'2689-0909',
+        'email':'joseferreira@consultorio.com.br',
+        'latitude':'-22.9135455',
+        'longitude':'-43.2235144'
+      }
+];
+});
+
+App.controller('DetalheResultadoController', function($scope, resultadoFactory){
+
+  $scope.titulo = 'Detalhe';
+  
+  $scope.resultado = resultadoFactory.resultado;
+
+});
 
 /* ********** Controllers ********** */ 

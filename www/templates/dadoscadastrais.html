@@ -1,86 +1,84 @@
 <!-- Dados Cadastrais -->
 <link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
 <div ng-controller="DadosCadastraisController as dadosCtrl" class="ng-cloak">
-    <div class="header">
-        <div class="text-center col-xs-4" style="border-right: 2px solid #9B9B9B;">
-            <img src="assets/logo_golden_vertical_50px.png" />
-        </div> 
-        <div class="col-xs-16" style="padding-top: 15px;">
-            <h1 class="text-center" style="font-family: RobotoBold" ng-bind="titulo"></h1>
-        </div>       
-    </div>
-
-    <div style="margin: 90px 0 0 20px;" back>
-        <img width="50px" src="assets/newicons/back.png"/> 
-    </div>
-
-    <div style="margin: 30px 10px 10px 10px;">
-    	<div class="alert alert-success" role="alert">
-    		<h1>TITULAR ATIVO</h1>
-    	</div>
-    </div>
-
-    <div class="form">
-	    <div class="field col-xs-20">
-	    	<h1>Nome:</h1>
-	    	<h2>Pedro Souza</h2>
+	<div>    
+	    <div class="header">
+	        <div class="text-center col-xs-6" style="border-right: 2px solid #9B9B9B;">
+	            <img src="assets/logo_golden_vertical_50px.png" />
+	        </div> 
+	        <div class="col-xs-14" style="padding-top: 15px;">
+	            <h1 class="text-center" style="font-family: RobotoBold" ng-bind="titulo"></h1>
+	        </div>       
 	    </div>
-	    <div>
-			<div class="field col-xs-10">
-				<h1>Matrícula:</h1>
-				<h2>989989989</h2>
-			</div>
-			<div class="field col-xs-10">
-				<h1>CPF:</h1>
-				<h2>00.000.000-00</h2>
-			</div>
-		</div>	
-			<div class="field col-xs-20">
-	    		<h1>Email:</h1>
-	    		<input type=text placeholder="paulosouza@gmail.com"></h2>
+
+	    <div style="margin: 90px 0 0 20px;" back>
+	        <img width="50px" src="assets/newicons/back.png"/> 
+	    </div>
+
+	    <div style="margin: 30px 10px 10px 10px;">
+	    	<div class="alert alert-success" role="alert">
+	    		<h1>TITULAR ATIVO</h1>
 	    	</div>
-	    	<div class="field col-xs-20">
-	    		<h1>Endereço:</h1>
-	    		<input type=text placeholder="Rua Nossa Senhora de Copacabana, 1567"></h2>
-	    	</div>
-			<div class="field col-xs-20">
-	    		<h1>Complemento:</h1>
-	    		<input type=text placeholder="Bloco 1 - Apto. 1103"></h2>
-	    	</div>
-	    	<div>
+	    </div>
+
+	</div>
+
+
+    <div style="overflow: scroll; margin-bottom: 80px">
+
+    	<div class="form">
+		    <div class="field col-xs-20">
+		    	<h1>Nome:</h1>
+		    	<h2>Pedro Souza</h2>
+		    </div>
+		    <div>
 				<div class="field col-xs-10">
-					<h1>Bairro:</h1>
-					<input type=text placeholder="Copacabana"></h2>
+					<h1>Matrícula:</h1>
+					<h2>989989989</h2>
 				</div>
 				<div class="field col-xs-10">
-					<h1>Cidade:</h1>
-					<input type=text placeholder="Rio de Janeiro"></h2>
+					<h1>CPF:</h1>
+					<h2>00.000.000-00</h2>
 				</div>
-			</div>
-			<div>
-			<div class="field col-xs-2">
-				<h1>RJ:</h1>
-				<input type=text placeholder="RJ"></h2>
-			</div>
-			<div class="field col-xs-8">
-				<h1>CEP:</h1>
-				<input type=text placeholder="00000-000"></h2>
-			</div><div class="field col-xs-10">
-				<h1>TEL:</h1>
-				<input type=text placeholder="(0000)00000-0000"></h2>
-			</div>
+			</div>	
+				<div class="field col-xs-20">
+		    		<h1>Email:</h1>
+		    		<input type=text placeholder="paulosouza@gmail.com">
+		    	</div>
+		    	<div class="field col-xs-20">
+		    		<h1>Endereço:</h1>
+		    		<input type=text placeholder="Rua Nossa Senhora de Copacabana, 1567">
+		    	</div>
+				<div class="field col-xs-20">
+		    		<h1>Complemento:</h1>
+		    		<input type=text placeholder="Bloco 1 - Apto. 1103">
+		    	</div>
+		    	<div>
+					<div class="field col-xs-10">
+						<h1>Bairro:</h1>
+						<input type=text placeholder="Copacabana">
+					</div>
+					<div class="field col-xs-10">
+						<h1>Cidade:</h1>
+						<input type=text placeholder="Rio de Janeiro">
+					</div>
+				</div>
+				<div>
+				<div class="field col-xs-2">
+					<h1>RJ:</h1>
+					<input type=text placeholder="RJ">
+				</div>
+				<div class="field col-xs-8">
+					<h1>CEP:</h1>
+					<input type=text placeholder="00000-000">
+				</div>
+				<div class="field col-xs-10">
+					<h1>TEL:</h1>
+					<input type=text placeholder="(0000)00000-0000">
+				</div>
 		</div>
-		<!-- <div class="text-center">
-			<h1>DEPENDENTES</h1> 
-		</div>
-		<div class="field col-xs-20">
-			<h1>Nome:</h1>
-			<h2>Maria Silva Souza</h2>
-		</div>	
-		<div class="field col-xs-20">
-			<h1>Nome:</h1>
-			<h2>Carlos Silva Souza</h2>
-		</div>	 -->		   
+
+	</div>
 	</div>
 	
 

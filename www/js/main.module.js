@@ -591,6 +591,12 @@ App.controller('FaleConoscoController', function($scope){
 
 });
 
+App.controller('RelacionamentoController', function($scope){
+
+  $scope.titulo = 'Relacionamento';
+
+});
+
 App.controller('FaqController', function($scope){
 
   $scope.titulo = 'FAQ';

@@ -2,10 +2,10 @@
 <link rel="stylesheet" type="text/css" href="css/ui-listView.css" />
 <div class="container" ng-controller="ConsultaSenhasController as consultasenhasCtrl">
     <div class="header">
-        <div class="text-center col-xs-4" style="border-right: 2px solid #9B9B9B;">
+        <div class="text-center col-xs-6" style="border-right: 2px solid #9B9B9B;">
             <img src="assets/logo_golden_vertical_50px.png" />
         </div> 
-        <div class="col-xs-16" style="padding-top: 15px;">
+        <div class="col-xs-14" style="padding-top: 15px;">
             <h1 class="text-center" style="font-family: RobotoBold" ng-bind="titulo"></h1>
         </div>       
     </div>
@@ -43,7 +43,7 @@
     	</div>
     </div>
 
-   <div ui-list-view="senha in senhas" options="listView" class="ui-list-view-striped">
+   <div ui-list-view="senha in senhas" options="listView" class="ui-list-view-striped" style="height: 200px; min-height: 260px">
         <!-- <div ng-click="addNotificacao(notificacao)"> -->
         <div>
             <span style="display: inline-block;"><h2>CPF/CNPJ:</h2></span><strong>&nbsp;<h2 style="display: inline-block; color: black" ng-bind="senha.cpf_cnpj"></h2><BR>
